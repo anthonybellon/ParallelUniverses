@@ -1,14 +1,15 @@
 'use client';
 
 import React from 'react';
-import { useTranslations } from 'next-intl';
+import Timeline from '@components/organisms/Timeline';
+import MainLayout from '@components/templates/MainLayout';
 
 const HomePage: React.FC = () => {
-  const t = useTranslations('Index');
-
   return (
     <div className="flex flex-1 items-center justify-center">
-      <h1>{t('title')}</h1>
+      <MainLayout>
+        <Timeline />
+      </MainLayout>
     </div>
   );
 };
