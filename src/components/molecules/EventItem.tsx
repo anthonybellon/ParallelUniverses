@@ -1,26 +1,32 @@
 import React from 'react';
 import Button from '../atoms/Button';
-
-interface Event {
-  date: string;
-  title: string;
-  description: string;
-}
+import { EventNode } from '../../data/events';
 
 interface EventItemProps {
-  event: Event;
-  onCreateScenario: (event: Event) => void;
+  event: EventNode;
+  onCreateScenario: (event: EventNode) => void;
 }
 
 const EventItem: React.FC<EventItemProps> = ({ event, onCreateScenario }) => (
   <li className="event-item">
     <h3>
-      {event.date}: {event.title}
+      {event.date}: {event.name}
     </h3>
     <p>{event.description}</p>
     <Button onClick={() => onCreateScenario(event)}>
       Create Divergent Scenario
     </Button>
+    {event.children && (
+      <ul>
+        {event.children.map((childEvent) => (
+          <EventItem
+            key={childEvent.id}
+            event={childEvent}
+            onCreateScenario={onCreateScenario}
+          />
+        ))}
+      </ul>
+    )}
   </li>
 );
 

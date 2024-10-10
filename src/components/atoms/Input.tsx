@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface InputProps {
-  type?: string;
+  type: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
@@ -9,7 +9,7 @@ interface InputProps {
 }
 
 const Input: React.FC<InputProps> = ({
-  type = 'text',
+  type,
   value,
   onChange,
   placeholder,
