@@ -1,77 +1,132 @@
 'use client';
 
-import React, { useState } from 'react';
-import CollapsibleTreeChart from '@components/organisms/CollapsibleTreeChart';
+import React, { useState, useEffect } from 'react';
 import UserInputForm from '@components/organisms/UserInputForm';
-import { events as initialEvents, EventNode } from 'src/data/events';
+import { EventNode } from 'src/data/events';
 import MainLayout from '@components/templates/MainLayout';
-import Modal from '@components/atoms/Modal';
+import SelectTimeline from '@components/molecules/SelectTimelines';
+import SelectEvent from '@components/molecules/SelectEvent';
+import CollapsibleTreeChart from '@components/organisms/CollapsibleTreeChart';
+
+type EventData = Record<string, EventNode[]>;
+
+const getUniqueTimelineIDs = (events: EventData): string[] => {
+  return Object.keys(events);
+};
 
 const HomePage: React.FC = () => {
-  const [events, setEvents] = useState<EventNode[]>(initialEvents);
+  const [timelines, setTimelines] = useState<string[]>([]);
+  const [selectedTimeline, setSelectedTimeline] = useState<string | null>(null);
+  const [timelineEvents, setTimelineEvents] = useState<EventNode[]>([]);
+  const [allEvents, setAllEvents] = useState<EventData>({});
   const [selectedEvent, setSelectedEvent] = useState<EventNode | null>(null);
 
-  const handleNodeClick = (event: EventNode) => {
-    setSelectedEvent(event);
-  };
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await fetch('/api/events');
+        const events: EventData = await response.json();
 
-  const closeModal = () => {
-    setSelectedEvent(null);
-  };
+        setAllEvents(events);
+        setTimelines(getUniqueTimelineIDs(events));
+      } catch (error) {
+        console.error('Error fetching events:', error);
+      }
+    };
+    fetchEvents();
+  }, []);
 
-  const addEvent = async (event: EventNode, question: string) => {
+  useEffect(() => {
+    if (selectedTimeline && allEvents[selectedTimeline]) {
+      const sortedEvents = allEvents[selectedTimeline].sort(
+        (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
+      );
+      setTimelineEvents(sortedEvents);
+      setSelectedEvent(null);
+    }
+  }, [selectedTimeline, allEvents]);
+
+  const addEvent = async (
+    event: EventNode,
+    question: string,
+    newTimelineName?: string,
+  ) => {
     try {
       const response = await fetch('/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ event, question }),
+        body: JSON.stringify({ event, question, newTimelineName }),
       });
       const data = await response.json();
 
       if (response.ok) {
+        const isSplinter = event.eventType === 'Splinter';
         const newEvent: EventNode = {
           id: String(Date.now()),
+          timelineID: isSplinter
+            ? newTimelineName || String(Date.now())
+            : event.timelineID,
           name: data.title,
           date: data.date,
           description: data.description,
-          parent: event.id,
-          splinterId: event.id,
-          children: [],
+          eventType: event.eventType,
+          embellishments: [],
         };
 
-        const updateTimeline = (events: EventNode[]): EventNode[] => {
-          return events.map((e) => {
-            if (e.id === event.id) {
-              return { ...e, children: [...(e.children || []), newEvent] };
-            }
-            if (e.children) {
-              return { ...e, children: updateTimeline(e.children) };
-            }
-            return e;
-          });
-        };
+        const updatedEvents = { ...allEvents };
+        if (isSplinter && newTimelineName) {
+          updatedEvents[newTimelineName] = [newEvent];
+          setTimelines((prevTimelines) => [...prevTimelines, newTimelineName]);
+        } else {
+          const timelineId = event.timelineID;
+          if (timelineId) {
+            updatedEvents[timelineId] = [
+              ...(updatedEvents[timelineId] || []),
+              newEvent,
+            ];
+          }
+        }
 
-        setEvents(updateTimeline(events));
+        setAllEvents(updatedEvents);
+        if (selectedTimeline) {
+          setTimelineEvents(
+            (updatedEvents[selectedTimeline] || []).sort(
+              (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
+            ),
+          );
+        }
       }
     } catch (error) {
       console.error('Error generating alternate history:', error);
-    } finally {
-      closeModal();
     }
   };
 
   return (
     <MainLayout>
-      <CollapsibleTreeChart data={events} onNodeClick={handleNodeClick} />
-      <Modal isOpen={!!selectedEvent} onClose={closeModal}>
-        {selectedEvent && (
-          <UserInputForm
-            event={selectedEvent}
-            onSubmit={addEvent}
-            closeModal={closeModal}
-          />
-        )}
-      </Modal>
+      <CollapsibleTreeChart data={timelineEvents} />
+      <SelectTimeline
+        timelines={timelines}
+        selectedTimeline={selectedTimeline}
+        onSelect={setSelectedTimeline}
+      />
+      {selectedTimeline && (
+        <SelectEvent
+          events={timelineEvents}
+          selectedEventId={selectedEvent?.id || null}
+          onSelect={(id) =>
+            setSelectedEvent(
+              timelineEvents.find((event) => event.id === id) || null,
+            )
+          }
+        />
+      )}
+      {selectedEvent && (
+        <UserInputForm
+          event={selectedEvent}
+          onSubmit={addEvent}
+          closeModal={() => setSelectedEvent(null)}
+        />
+      )}
     </MainLayout>
   );
 };

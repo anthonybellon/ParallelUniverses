@@ -1,0 +1,97 @@
+{
+  "1": [
+    {
+      "id": "1",
+      "timelineID": "1",
+      "name": "First Powered Flight",
+      "date": "1903-01-01",
+      "description": "The Wright brothers achieve the first powered flight.",
+      "eventType": "Continuation",
+      "embellishments": [
+        "The flight took place at Kitty Hawk, North Carolina.",
+        "The plane was called the Flyer and had a wingspan of 12.3 meters."
+      ],
+      "parentId": null
+    },
+    {
+      "id": "2",
+      "timelineID": "1",
+      "name": "Start of World War I",
+      "date": "1914-07-28",
+      "description": "WWI begins after the assassination of Archduke Franz Ferdinand.",
+      "eventType": "Continuation",
+      "parentId": "1"
+    },
+    {
+      "id": "3",
+      "timelineID": "1",
+      "name": "Moon Landing",
+      "date": "1969-07-20",
+      "description": "Apollo 11 lands the first humans on the Moon.",
+      "eventType": "Continuation",
+      "parentId": "2"
+    },
+    {
+      "id": "4",
+      "timelineID": "1",
+      "name": "Fall of the Berlin Wall",
+      "date": "1989-11-09",
+      "description": "Marks the symbolic end of the Cold War.",
+      "eventType": "Continuation",
+      "parentId": "3"
+    }
+  ],
+  "2": [
+    {
+      "id": "1728595674745",
+      "timelineID": "2",
+      "name": "The Abandoned Pursuit of Powered Flight",
+      "date": "1903-01-01",
+      "description": "On this date, the Wright brothers decide to abandon their experiments with powered flight after a series of setbacks, delays, and lack of funding. As a result, the development of aviation technology is delayed by decades. This pivotal decision shifts the course of history, significantly impacting global communication, warfare, and transportation industries throughout the 20th century. Nations continue to focus on advancements in rail and sea travel, with aviation enthusiasts struggling to gain traction in the absence of the pioneering achievement that inspired further innovation. The world remains grounded, quite literally, as the skies remain the domain of birds only.",
+      "parentId": null,
+      "eventType": "Splinter",
+      "embellishments": []
+    },
+    {
+      "id": "1728595787070",
+      "timelineID": "2",
+      "name": "The Soaring Dawn of Aviation and Economic Descent",
+      "date": "1910-01-01",
+      "description": "Following their initial setbacks, the Wright brothers receive unexpected financial backing from a visionary investor in 1903, propelling their aviation experiments forward. By 1905, powered flight is successfully demonstrated, sparking an immediate global interest and investment in aviation technology. The rapid advancement of aviation becomes a hallmark of the early 20th century. However, by 1910, the world faces an unforeseen economic crash triggered by speculative investments and a market bubble burst linked to aviation stocks. Despite the economic downturn, the established foundation of aviation persists. The industry struggles but continues to advance slowly, balancing innovation with newfound caution in financial markets. As nations recover, the delayed promise of accessible and widespread air travel eventually transforms global communication and transportation, albeit through a more gradual and turbulent path.",
+      "parentId": "1728595674745",
+      "eventType": "Continuation",
+      "embellishments": []
+    },
+    {
+      "id": "1728597777343",
+      "timelineID": "2",
+      "name": "The Wings of War: Aviation's Crucible",
+      "date": "1914-07-28",
+      "description": "The successful advancement of aviation technology in the early 20th century, initially fueled by speculative investments and eventual economic caution, takes a drastic turn with the outbreak of World War I in 1914. Nations, having recovered from the 1910 economic downturn, rapidly mobilize their burgeoning aviation industries for military purposes. The Wright brothers' innovations and the global interest in flight lead to significant military applications, fundamentally altering the course of the war. In this alternate timeline, the potential for aviation as a tool of war accelerates technological progress. The conflicts in the skies become as pivotal as those on the ground, leading to swift advancements in aircraft design and aerial tactics. By the end of the war, aviation emerges not only as a crucial military asset but also as a springboard for post-war economic revitalization. The shared international experience of aviation in wartime catalyzes future cooperation and treaties focused on aviation safety and commercialization, paving a faster, more resilient path to global air travel and connectivity.",
+      "parentId": null,
+      "eventType": "Continuation",
+      "embellishments": []
+    },
+    {
+      "id": "1728597751890",
+      "timelineID": "2",
+      "name": "Jet-Powered Ascent: Aviation and Economic Triumph",
+      "date": "1935-01-01",
+      "description": "In a groundbreaking development in 1930, the Wright brothers, building on their earlier successes, manage to prototype a jet engine with the help of an innovative and relentless team of engineers. The initial test flights in 1931 are met with skepticism, but soon the world acknowledges the sheer potential of this technology. By 1935, jet-powered aircraft redefine air travel, offering unheard-of speeds and transforming the aviation industry into a leading economic driver. The economic landscape thrives as aviation becomes a cornerstone of global commerce and connectivity. Investment in aviation reaches unprecedented heights, leading to rapid advancements not only in transportation but also in air defense. As World War II looms, countries equipped with jet technology find themselves significantly advantaged, reshaping military strategies and alliances. This technological leap fosters stronger international ties and a collaborative spirit, ultimately contributing to a shortened duration of World War II and laying the groundwork for a prosperous post-war global economy. The discovery and commercialization of the jet engine ushered in a new era of rapid technological progress and international cooperation, setting the stage for the modern world we know today.",
+      "parentId": null,
+      "eventType": "Continuation",
+      "embellishments": []
+    }
+  ],
+  "3": [
+    {
+      "id": "1728598102704",
+      "timelineID": "3",
+      "name": "The Early German Jet-Powered Blitzkrieg",
+      "date": "1935-01-01",
+      "description": "In this alternate history, the breakthrough in jet propulsion achieved by the Wright brothers and their team is not kept secret for long. Germany, recognizing the potential of jet-engine technology, invests heavily in espionage and reverse engineering during the early 1930s. By 1934, German aeronautical engineers have successfully replicated and improved upon the design, giving rise to a fleet of jet-powered aircraft. \n\nEmboldened by this technological advantage, Adolf Hitler decides to accelerate his expansionist agenda. On January 1, 1935, Germany, equipped with superior jet-powered aircraft, launches an early and unexpected assault on neighboring countries, marking the premature beginning of World War II. \n\nThe Luftwaffe, with its unparalleled speed and tactical advantage, overwhelms traditional aircraft and defenses, leading to rapid conquests across Europe. The swift and devastating Blitzkrieg tactics shock the world and force the Allied powers into a defensive stance earlier than anticipated. \n\nThis early onset of global conflict alters political alliances and technological priorities worldwide. Nations scramble to develop their own jet technology and improve air defenses. The war becomes a prolonged battle centered around air superiority, drawing resources and attention away from other military innovations and strategies. \n\nWorld War II, though starting earlier, becomes an even longer and more arduous conflict with nations focusing on matching and countering the aerial prowess of the early belligerents. The war reshapes global politics and technological development significantly, leaving a lasting impact on the mid-20th-century world order. The eventual post-war recovery is more challenging, delaying the subsequent economic growth and technological advancements experienced in the original timeline.",
+      "eventType": "Splinter",
+      "embellishments": []
+    }
+  ]
+}
