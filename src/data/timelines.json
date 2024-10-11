@@ -75,6 +75,15 @@
       "description": "In a groundbreaking development in 1930, the Wright brothers, building on their earlier successes, manage to prototype a jet engine with the help of an innovative and relentless team of engineers. The initial test flights in 1931 are met with skepticism, but soon the world acknowledges the sheer potential of this technology. By 1935, jet-powered aircraft redefine air travel, offering unheard-of speeds and transforming the aviation industry into a leading economic driver. The economic landscape thrives as aviation becomes a cornerstone of global commerce and connectivity. Investment in aviation reaches unprecedented heights, leading to rapid advancements not only in transportation but also in air defense. As World War II looms, countries equipped with jet technology find themselves significantly advantaged, reshaping military strategies and alliances. This technological leap fosters stronger international ties and a collaborative spirit, ultimately contributing to a shortened duration of World War II and laying the groundwork for a prosperous post-war global economy. The discovery and commercialization of the jet engine ushered in a new era of rapid technological progress and international cooperation, setting the stage for the modern world we know today.",
       "eventType": "Continuation",
       "embellishments": []
+    },
+    {
+      "id": "1728683761635",
+      "timelineID": "2",
+      "name": "Jet-Powered Ascent Aviation and Economic Triumph",
+      "date": "1935-01-01",
+      "description": "In a groundbreaking development in 1930 the Wright brothers building on their earlier successes manage to prototype a jet engine with the help of an innovative and relentless team of engineers The initial test flights in 1931 are met with skepticism but soon the world acknowledges the sheer potential of this technology By 1935 jetpowered aircraft redefine air travel offering unheardof speeds and transforming the aviation industry into a leading economic driver The economic landscape thrives as aviation becomes a cornerstone of global commerce and connectivity Investment in aviation reaches unprecedented heights leading to rapid advancements not only in transportation but also in air defense As World War II looms countries equipped with jet technology find themselves significantly advantaged reshaping military strategies and alliances This technological leap fosters stronger international ties and a collaborative spirit ultimately contributing to a shortened duration of World War II and laying the groundwork for a prosperous postwar global economy The discovery and commercialization of the jet engine ushered in a new era of rapid technological progress and international cooperation setting the stage for the modern world we know today",
+      "eventType": "Continuation",
+      "embellishments": []
     }
   ],
   "3": [
@@ -98,11 +107,65 @@
       "embellishments": []
     },
     {
+      "id": "1728682377055",
+      "timelineID": "3",
+      "name": "The Gaulish Pact's Aeronautical Neutralization Policy",
+      "date": "1939-01-01",
+      "description": "In this alternate timeline, the revelation of Germany's early development of jet-powered aircraft sends shockwaves throughout Europe. However, instead of succumbing to Germany's initial advantage, several European nations, led by France, rapidly form the Gaulish Pact in early 1935. This alliance dedicates itself to countering German prowess through collaborative technological innovation and espionage. As a part of their strategy, the Pact focuses on neutralizing Germany's aerial superiority without escalating into full-scale conflict immediately. By 1939, the Gaulish Pact has made significant advancements in anti-aircraft technology and strategic misdirection tactics, rendering Germany's jet-powered blitzkrieg far less effective. They employ sophisticated radar systems and develop innovative aerial countermeasures that diminish the element of surprise. The tense, yet bloodless standoff leads to a different kind of tension within Europe, avoiding total warfare. Diplomacy and espionage take precedence over direct conflict, resulting in a prolonged wartime economy without the mass destruction of conventional warfare seen in the primary timeline. The political landscape of Europe shifts towards an intricate web of alliances and neutral zones, with countries cautiously adopting technological innovations. 1939 becomes known not as the year World War II began but as the year European powers managed to avert full-scale war through strategic preparation and alliance, setting the stage for a precarious peace dictated by technological brinkmanship and cautious diplomacy.",
+      "eventType": "Continuation",
+      "embellishments": []
+    },
+    {
       "id": "1728644679829",
       "timelineID": "3",
       "name": "The Allied Jet Revolution",
       "date": "1940-05-01",
       "description": "In this alternate universe, the global response to the German jet-powered Blitzkrieg of 1935 spurs an unprecedented collaborative effort among Allied nations. By pooling scientific talent and resources, the Allies overcome their initial technological disadvantage. By 1940, a breakthrough in jet propulsion technology occurs simultaneously in the United States, United Kingdom, and Soviet Union. On May 1, 1940, the Allies launch a coordinated counteroffensive using their newly developed jet-powered aircraft fleets. The immense speed and improved designs rival those of the German Luftwaffe, shifting the balance of aerial power. This marks the beginning of the 'Allied Jet Revolution,' an era where air combat dominates military strategies. As a result, the war focuses heavily on air battles, with ground offensives playing a secondary role. The prolonged conflict sees rapid advancements in jet technology, radar systems, and aerial tactics, ultimately leading to the exhaustion of resources for both the Axis and Allied powers. By 1945, the war ends not with a decisive victory but a mutual agreement for a ceasefire, driven by the economic devastation and stalemates in air warfare. Global alliances are redefined, prioritizing cooperative technological development and economic rebuilding. The post-war world witnesses a transformation in international relations, emphasizing diplomacy and scientific collaboration, laying the groundwork for future global institutions that prevent such widespread conflicts.",
+      "eventType": "Continuation",
+      "embellishments": []
+    },
+    {
+      "id": "1728682425904",
+      "timelineID": "3",
+      "name": "The Axis Jet Resurgence",
+      "date": "1941-05-01",
+      "description": "In this alternate universe, the initial success of the Allied Jet Revolution prompts a renewed effort from the Axis powers. By mid-1941, Germany and its allies manage to reverse engineer captured Allied jet technology, leading to the creation of their own advanced fleet of jet-powered aircraft. On May 1, 1941, the Axis powers launch a surprise jet offensive, catching the Allies off guard and regaining air superiority on multiple fronts. This event marks the beginning of the Axis Jet Resurgence, a period characterized by a dynamic and aggressive air campaign led by the Luftwaffe. As both sides engage in intense aerial battles, the focus shifts toward strategic bombing efforts, targeting infrastructure and industrial centers to cripple each other's war capabilities. The war becomes prolonged, as technological leaps on both sides create an arms race in the air. Ultimately, the conflict extends beyond 1945, evolving into a war of attrition, with both sides suffering great losses but neither able to gain a decisive advantage. The prolonged warfare restructures global alliances, and the eventual peace negotiations focus on limiting offensive air capabilities, leading to the establishment of international agreements aimed at maintaining airspace as a tool for peace and scientific exploration rather than warfare.",
+      "eventType": "Continuation",
+      "embellishments": []
+    },
+    {
+      "id": "1728683189412",
+      "timelineID": "3",
+      "name": "The Allied Jet Counteroffensive",
+      "date": "1942-05-01",
+      "description": "In the wake of the Axis Jet Resurgence, Allied forces undertake an accelerated and coordinated development of advanced jet technology, leading to the Allied Jet Counteroffensive by May 1, 1942. The Allies, under immense strategic pressure, manage to mobilize resources from the United States' industrial might and British technological innovations to roll out a new generation of jet fighters and bombers. This counteroffensive sees the Allies executing a series of synchronized aerial strikes across German-held territories, targeting Axis airfields and factories critical to their jet production. The renewed Allied air campaign aims to reclaim air superiority, relying on superior tactics and a strong emphasis on radar-guided missions. The conflict takes on a global dimension as Allied operations stretch from Europe to the Pacific, supported by international coalitions eager to halt the Axis momentum. Through a combination of technological ingenuity and strategic alliances, the Allies begin to erode German strategic advantages, paving the way for new military dynamics and eventual shifting frontlines by the end of 1942.",
+      "eventType": "Continuation",
+      "embellishments": []
+    },
+    {
+      "id": "1728683466305",
+      "timelineID": "3",
+      "name": "Axis Jet Dominance Maintained",
+      "date": "1942-05-01",
+      "description": "In an alternate timeline where the Allied response to the Axis Jet Resurgence faulters due to internal disagreements and logistical challenges, the Axis powers solidify their domination in the skies. Despite efforts to coordinate and accelerate jet technology development, the Allied forces face a series of setbacks, including resource bottlenecks and technological hurdles. As a result, the Axis powers, particularly Germany, maintain their technological edge in the air by rolling out more advanced jet fighters faster. Allied airfields and factories come under increased pressure, severely limiting their production capacity. The global dimension of the conflict forces the Allies to disperse their already stretched resources across multiple fronts, weakening their strategic focus. By the end of 1942, the Axis has not only reclaimed but expanded their aerial superiority, allowing them to launch daring and deep attacks into Allied territories. The Allied powers are forced into a defensive posture globally, reassessing their strategies and awaiting breakthroughs in technology or international diplomacy to regain their footing.",
+      "eventType": "Continuation",
+      "embellishments": []
+    },
+    {
+      "id": "1728683623183",
+      "timelineID": "3",
+      "name": "Allied Jet Resurgence Turned the Tide",
+      "date": "1942-05-01",
+      "description": "Following the initial Axis Jet Dominance, the Allied powers recognize the critical importance of air superiority. In a united front, the Allied governments streamline their coordination and invest heavily in innovation. Key technological breakthroughs are achieved when British engineer Frank Whittle's advancements are expedited through the collaboration of American resources and Soviet strategic input. By mid-1942, the Allies debut a new generation of jet fighters that rival those of the Axis, disrupting the previously uncontestable German aerial advantage.\n\nThe improved Allied jets feature superior speed and maneuverability, quickly establishing dominance in several key theaters. Utilizing their new technological prowess, the Allies embark on a strategic counteroffensive, striking deep into Axis-controlled airfields and supply lines. The effective disruption of Axis logistics and air capabilities marks a significant shift in the air war.\n\nConcurrent efforts to build deeper alliances and more comprehensive resource-sharing agreements among the Allied nations lead to a revival in production and deployment capabilities. By the close of 1942, the tide of the air war has shifted, with the Allies reclaiming significant territory and setting the stage for further successes in 1943.\n\nThe United Nations lend significant diplomatic support, facilitating supply chains and opening new fronts against Axis forces, rejuvenating the hope of freedom in territories under occupation. The rapid adaptation and collaboration reinvigorate the Allied war effort, ensuring a more aggressive stance in the subsequent phase of the conflict.",
+      "eventType": "Continuation",
+      "embellishments": []
+    },
+    {
+      "id": "1728683868012",
+      "timelineID": "3",
+      "name": "Axis Jet Domination Solidifies",
+      "date": "1942-10-01",
+      "description": "Despite initial attempts by the Allied forces to counter the Axis jet superiority, a series of strategic missteps and unforeseen technological hurdles prevent the rapid development and deployment of their own jet fighters. British engineer Frank Whittle's engine designs face significant delays due to resource scarcity and bureaucratic obstacles, while attempts to unite Allied technological efforts falter under logistical constraints.\n\nBy October 1942, the Axis powers capitalize on their maintained air superiority, launching extensive aerial campaigns that severely disrupt Allied supply lines and frontline operations. Axis jets maintain their dominance in speed, range, and payload, executing strategic bombings and air raids that cripple key Allied positions in North Africa and the Pacific.\n\nThe strained Allied forces, struggling with coordination and resource shortages, find themselves increasingly on the defensive. Efforts to secure deeper alliances and resource-sharing agreements are hampered by political mistrust and internal disagreements. The United Nations, hampered by limited diplomatic leverage, struggles to mount an effective international response.\n\nAs the year closes, the Axis powers consolidate their territorial gains, fortifying positions and preparing for a renewed offensive into Allied territories. The Allies, facing a prolonged war of attrition, reassess their strategies, seeking new methods and partnerships to counter the formidable Axis aerial dominance in the coming year. The balance of power in the air war thus firmly rests with the Axis as 1943 approaches.",
       "eventType": "Continuation",
       "embellishments": []
     }
@@ -126,6 +189,108 @@
       "description": "On July 20, 1969, the world watched as the United States achieved a monumental milestone in space exploration with the successful landing of Apollo 11 on the lunar surface. Astronauts Neil Armstrong and Edwin 'Buzz' Aldrin became the first humans to walk on the Moon, while Michael Collins orbited in the Command Module. This achievement, broadcast live to a global audience, represented a pivotal victory for the United States in the Space Race and established NASA as a premier force in space exploration. Consequently, this event not only enhanced pride and unity in the United States but also set a new course for international cooperation in space science and exploration, leading to collaborative missions with other nations in subsequent decades. The achievement prompted increased investment in STEM education and created a generation inspired to pursue careers in science and engineering, significantly influencing technological advancement and innovation.",
       "eventType": "Continuation",
       "embellishments": []
+    },
+    {
+      "id": "1728683990506",
+      "timelineID": "4",
+      "name": "Soviet Moon Triumph: Luna 15 Lands First",
+      "date": "1969-07-20",
+      "description": "On July 20, 1969, in a shocking twist of fate, the Soviet Union achieved a groundbreaking milestone in space exploration by landing Luna 15 on the lunar surface, just hours before the American Apollo 11 mission was scheduled to land. Cosmonauts Alexei Leonov and Valentina Tereshkova became the first humans to set foot on the Moon, with spacecraft pilot Pavel Belyayev remaining in lunar orbit. This unexpected victory marked a significant triumph for the USSR in the Space Race, showcasing their technological prowess and altering the trajectory of future space endeavors. The event was broadcast globally, challenging American dominance and reshaping space exploration dynamics. In the wake of their success, the Soviet Union took the lead in establishing international guidelines for lunar and space exploration. This alternate reality saw a surge in Soviet-inspired educational initiatives worldwide, leading to increased collaboration between Eastern and Western nations in space research and technology. The change in leadership in space exploration redefined global technological competition and cooperation, with the USSR spearheading numerous joint missions with the United States and other countries, fostering a new era of space exploration that emphasized unity and shared human achievement.",
+      "eventType": "Continuation",
+      "embellishments": []
+    }
+  ],
+  "5": [
+    {
+      "id": "1728682507001",
+      "timelineID": "Timeline 5",
+      "name": "Harmony Across Nations",
+      "date": "1939-09-01",
+      "description": "In this alternate timeline, the assassination of Archduke Franz Ferdinand does not lead to a global conflict but instead sparks an international movement for peaceful conflict resolution. By 1939, instead of World War II, countries come together to form the United Association for Global Peace (UAGP), focusing on diplomatic solutions and mutual cooperation. This event marks the 'Day of Diplomatic Triumph,' an annual celebration of unity and peace.",
+      "eventType": "Splinter",
+      "embellishments": [],
+      "parentID": "2"
+    },
+    {
+      "id": "1728682616265",
+      "timelineID": "Timeline 5",
+      "name": "The Great Schism",
+      "date": "1943-11-11",
+      "description": "In this alternate timeline, the United Association for Global Peace (UAGP) initially thrives, but by 1943 fractures begin to appear within the coalition due to ideological differences and power struggles. The Eastern Bloc, led by an authoritarian regime, disagrees with the democratic principles advocated by the Western nations. On November 11, 1943, tensions reach a boiling point during the annual UAGP summit. A significant schism occurs as the Eastern Bloc walks out, announcing the formation of their own alliance focusing on regional dominance rather than global peace. This event marks the beginning of a new era of regional conflicts and competitions, overshadowing the dream of global unity that once seemed attainable.",
+      "eventType": "Continuation",
+      "embellishments": []
+    },
+    {
+      "id": "1728682948564",
+      "timelineID": "Timeline 5",
+      "name": "The Great Reconciliation",
+      "date": "1948-11-11",
+      "description": "In this alternate timeline, the tensions within the United Association for Global Peace (UAGP) lead to intense diplomatic efforts rather than outright schism. On November 11, 1943, as disagreements threaten to destabilize the coalition, a pivotal moment occurs when charismatic leaders from both the Eastern Bloc and Western nations propose a series of dialogues focused on addressing ideological differences through mutual respect and compromise. By 1948, these efforts bear fruit as the 'Great Reconciliation Summit' is held, resulting in the Eastern Bloc and Western nations agreeing to a cooperative structure within the UAGP. This new framework emphasizes regional autonomy while committing to shared global objectives, fostering an era of political innovation and collaborative progress. Over the next five years, this cooperation ushers in unprecedented advancements in technology, trade, and culture, gradually overshadowing localized conflicts and enhancing global unity.",
+      "eventType": "Continuation",
+      "embellishments": []
+    },
+    {
+      "id": "1728683211627",
+      "timelineID": "Timeline 5",
+      "name": "The Great Divide",
+      "date": "1949-05-15",
+      "description": "The diplomatic efforts within the United Association for Global Peace (UAGP) faltered in this alternate universe. Despite the attempt at resolution during the proposed dialogues, deep-seated mistrust and ideological conflicts lead to an irreparable rift. On May 15, 1949, the UAGP faces dissolution as the Eastern Bloc forms an exclusive alliance aimed at strengthening socialism, while the Western nations focus on bolstering democratic principles and capitalism. This polarization intensifies global tensions, resulting in a bifurcated world order characterized by an arms race and fierce competition in technological and cultural arenas. Without the cooperative framework envisioned, the next decade witnesses heightened geopolitical tensions and the proliferation of proxy conflicts in various regions.",
+      "eventType": "Continuation",
+      "embellishments": []
+    },
+    {
+      "id": "1728683887589",
+      "timelineID": "Timeline 5",
+      "name": "Harmony Accord",
+      "date": "1949-05-15",
+      "description": "In an alternate reality, the diplomatic efforts within the United Association for Global Peace (UAGP) achieve remarkable success. On May 15, 1949, the Eastern Bloc and Western nations forge the \"Harmony Accord,\" a groundbreaking agreement that prioritizes common goals over ideological differences. The Accord establishes a framework for peaceful coexistence, encouraging collaborative advancements in technology, culture, and economics. This cooperation leads to a period known as the \"Era of Unity,\" marked by joint space exploration programs, cultural exchanges, and a global reduction in military expenditures. The UAGP transforms into a robust platform for conflict resolution, significantly reducing geopolitical tensions and fostering an inclusive, interconnected world order. Over the next decade, this environment of collaboration paves the way for unprecedented global prosperity and shared human development.",
+      "eventType": "Continuation",
+      "embellishments": []
+    }
+  ],
+  "6": [
+    {
+      "id": "1728684296076",
+      "timelineID": "6",
+      "name": "Allied Jet Breakthrough Turns the Tide",
+      "date": "1942-10-01",
+      "description": "In a surprising turn of events, the Allied forces achieve a significant technological breakthrough in jet fighter development. Under the leadership of British engineer Frank Whittle, who overcomes earlier bureaucratic and resource-related obstacles, the Allies successfully accelerate the production and deployment of advanced jet fighters. \n\nBy October 1942, these new jet fighters begin taking to the skies, quickly leveling the playing field. The Allied jets, equipped with superior avionics and tactical innovations, prove to be formidable adversaries to the Axis jets, neutralizing their previous dominance. \n\nWith newfound air superiority, the Allies launch coordinated aerial campaigns that turn the tide in North Africa and the Pacific. Strategic bombings significantly disrupt Axis supply lines and frontline operations, halting their momentum. The success in the air galvanizes Allied forces and boosts morale across the board, aiding in securing deeper alliances and establishing effective resource-sharing agreements. \n\nThe United Nations seizes this opportunity to strengthen international cooperation, mounting a unified diplomatic and military response to push back against Axis expansion. As the year closes, the Axis powers are forced into a defensive stance, reassessing their positions and strategies. The balance of power in the air war shifts dramatically in favor of the Allies as 1943 promises renewed Allied offensives and strategic gains.",
+      "eventType": "Splinter",
+      "embellishments": [],
+      "parentID": "1728683868012"
+    },
+    {
+      "id": "1728684502406",
+      "timelineID": "6",
+      "name": "Axis Adaptation Reshapes Air War",
+      "date": "1943-01-15",
+      "description": "In an alternate universe where the Allies achieve their jet breakthrough as in the original timeline, but the Axis powers quickly adapt to this new aerial threat, significant changes unfold. By January 1943, the Axis, utilizing strategic espionage and rapid engineering innovations, develop effective countermeasures to the Allied jets. German engineers, led by Willy Messerschmitt, work relentlessly to incorporate advanced radar and electronic warfare capabilities into their Luftwaffe, rendering initial Allied jet advantages less overwhelming. \n\nMeanwhile, the Japanese forces introduce the 'Kamaitachi' fighter, a new generation of agile, lightweight aircraft that employs guerrilla air tactics, making it considerably more challenging for Allied jets to assert dominance in the Pacific theater. Furthermore, the Axis powers fortify their air defenses by deploying more advanced anti-aircraft systems coupled with early warning technology, significantly curtailing Allied strategic bombing efforts. \n\nThe intensified competition in the skies results in a prolonged air war, with fluctuating air superiority and no clear victors. Despite the Allied jets' early advantages, the newly fortified Axis air strategy forces a stalemate by the beginning of 1943, prompting both sides to invest heavily in further technological and tactical advancements. This extended air conflict not only strains both sides but delays the hoped-for swift end to the war, altering military and diplomatic landscapes.",
+      "eventType": "Continuation",
+      "embellishments": []
+    }
+  ],
+  "7": [
+    {
+      "id": "1728685630659",
+      "timelineID": "7",
+      "name": "Fracture Agreement",
+      "date": "1952-04-18",
+      "description": "In this alternate timeline, the initial diplomatic efforts to unite the Eastern Bloc and Western nations under the Harmony Accord fail due to deep-rooted mistrust and escalating tensions. On April 18, 1952, the Fracture Agreement is signed, acknowledging the deep ideological divide and agreeing to separate spheres of influence. This agreement officially marks the beginning of a period known as the Cold Fracture Era. During this time, both blocs engage in aggressive technology races, competitive economic policies, and intense propaganda battles over cultural supremacy. Military alliances strengthen on both sides, leading to a resurgence of arms development and military buildups. The United Association for Global Peace (UAGP) becomes a much weaker entity, struggling to mediate increasingly frequent conflicts and finding itself sidelined in major geopolitical negotiations. This stark division results in years of heightened tensions and an increased risk of misunderstandings spiraling into full-scale conflicts, ultimately slowing down global progress and innovation due to constant rivalry.",
+      "eventType": "Splinter",
+      "embellishments": [],
+      "parentID": "1728683887589"
+    }
+  ],
+  "8": [
+    {
+      "id": "1728685701728",
+      "timelineID": "8",
+      "name": "Allied Technological Leap Reverses Air Superiority",
+      "date": "1942-07-15",
+      "description": "In this alternate timeline, a breakthrough in Allied jet technology is accidentally discovered by a team of engineers working on jet propulsion systems, significantly accelerating the development process. This breakthrough allows the Allies to quickly produce a new generation of jet fighters that can match the speed and agility of the Axis jets. With focused leadership and effective resource management, the Allies are able to mobilize their industrial capacities and produce jets in large numbers by mid-1942. As the new jets enter combat, the Allies begin to blunt the Axis air assaults and regain control of critical air corridors. By mid-July, through a series of strategic bombing campaigns and tactical air operations, the Allies not only reclaim lost territories but also start to shift the momentum, gaining air superiority over several key fronts. The empowerment and coordination of Allied forces help to stabilize the situation and bring new hope to the displaced populations in affected regions. The turning tide forces the Axis powers to reconsider their aggressive strategies and engage in diplomatic talks, looking for ways to fortify their standing without further extensive losses.",
+      "eventType": "Splinter",
+      "embellishments": [],
+      "parentID": "1728683466305"
     }
   ]
 }

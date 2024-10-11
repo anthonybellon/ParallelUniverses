@@ -1,5 +1,3 @@
-// src/components/molecules/FormField.tsx
-
 import React from 'react';
 import Input from '../atoms/Input';
 

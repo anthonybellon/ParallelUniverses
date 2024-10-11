@@ -1,12 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import UserInputForm from '@components/organisms/UserInputForm';
-import { EventNode } from 'src/data/events';
 import MainLayout from '@components/templates/MainLayout';
-import SelectTimeline from '@components/molecules/SelectTimelines';
-import SelectEvent from '@components/molecules/SelectEvent';
-import CollapsibleTreeChart from '@components/organisms/CollapsibleTreeChart';
+import { EventNode } from 'src/data/events';
 
 type EventData = Record<string, EventNode[]>;
 
@@ -77,7 +73,6 @@ const HomePage: React.FC = () => {
           eventType: event.eventType,
           embellishments: [],
         };
-
         const updatedEvents = { ...allEvents };
         if (isSplinter && newTimelineName) {
           updatedEvents[newTimelineName] = [newEvent];
@@ -91,9 +86,8 @@ const HomePage: React.FC = () => {
             ];
           }
         }
-
-        setAllEvents(updatedEvents);
-        await fetchEvents(); // Refresh events after adding a new event
+        setAllEvents(allEvents);
+        await fetchEvents();
       }
     } catch (error) {
       console.error('Error generating alternate history:', error);
@@ -101,41 +95,15 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <MainLayout>
-      <div className="grid w-[100vh] grid-cols-1">
-        <CollapsibleTreeChart data={timelineEvents} />
-
-        {/* Container for SelectTimeline, SelectEvent, and UserInputForm */}
-        <div style={{ marginTop: '20px', textAlign: 'center' }}>
-          <SelectTimeline
-            timelines={timelines}
-            selectedTimeline={selectedTimeline}
-            onSelect={setSelectedTimeline}
-          />
-          {selectedTimeline && (
-            <SelectEvent
-              events={timelineEvents.flat()}
-              selectedEventId={selectedEvent?.id || null}
-              onSelect={(id) =>
-                setSelectedEvent(
-                  timelineEvents.flat().find((event) => event.id === id) ||
-                    null,
-                )
-              }
-            />
-          )}
-          {selectedEvent && (
-            <div style={{ marginTop: '20px' }}>
-              <UserInputForm
-                event={selectedEvent}
-                onSubmit={addEvent}
-                closeModal={() => setSelectedEvent(null)}
-              />
-            </div>
-          )}
-        </div>
-      </div>
-    </MainLayout>
+    <MainLayout
+      timelineEvents={timelineEvents}
+      timelines={timelines}
+      selectedTimeline={selectedTimeline}
+      setSelectedTimeline={setSelectedTimeline}
+      selectedEvent={selectedEvent}
+      setSelectedEvent={setSelectedEvent}
+      addEvent={addEvent}
+    />
   );
 };
 

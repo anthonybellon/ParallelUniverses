@@ -1,3 +1,12 @@
+import {
+  Select,
+  SelectTrigger,
+  SelectContent,
+  SelectItem,
+  SelectValue,
+} from '@components/ui/select';
+import { Label } from '@components/ui/label';
+
 import React from 'react';
 import { EventNode } from 'src/data/events';
 
@@ -12,19 +21,24 @@ const SelectEvent: React.FC<SelectEventProps> = ({
   selectedEventId,
   onSelect,
 }) => (
-  <div>
-    <label>Select an Event:</label>
-    <select
-      value={selectedEventId || ''}
-      onChange={(e) => onSelect(e.target.value)}
+  <div className="flex flex-col space-y-2 px-6">
+    <Label htmlFor="event-select">Select an Event:</Label>
+    <Select
+      onValueChange={(value) => onSelect(value === 'reset' ? '' : value)}
+      value={selectedEventId || undefined}
     >
-      <option value="">Select Event</option>
-      {events.map((event) => (
-        <option key={event.id} value={event.id}>
-          {event.name}
-        </option>
-      ))}
-    </select>
+      <SelectTrigger id="event-select">
+        <SelectValue placeholder="Select Event" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="reset">Select Event</SelectItem>
+        {events.map((event) => (
+          <SelectItem key={event.id} value={event.id}>
+            {event.date} : {event.name}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
   </div>
 );
 

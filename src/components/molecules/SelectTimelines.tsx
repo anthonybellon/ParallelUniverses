@@ -1,3 +1,12 @@
+import {
+  Select,
+  SelectTrigger,
+  SelectContent,
+  SelectItem,
+  SelectValue,
+} from '@components/ui/select';
+import { Label } from '@components/ui/label';
+
 import React from 'react';
 
 interface SelectTimelineProps {
@@ -11,20 +20,24 @@ const SelectTimeline: React.FC<SelectTimelineProps> = ({
   selectedTimeline,
   onSelect,
 }) => (
-  <div>
-    <label>Select a Timeline:</label>
-    <select
-      value={selectedTimeline || ''}
-      onChange={(e) => onSelect(e.target.value)}
+  <div className="flex flex-col space-y-2 p-6">
+    <Label htmlFor="timeline-select">Select a Timeline:</Label>
+    <Select
+      onValueChange={(value) => onSelect(value)}
+      value={selectedTimeline || undefined}
     >
-      <option value="">Select Timeline</option>
-      <option value="all">All Timelines</option>{' '}
-      {timelines.map((timeline) => (
-        <option key={timeline} value={timeline}>
-          Timeline {timeline}
-        </option>
-      ))}
-    </select>
+      <SelectTrigger id="timeline-select">
+        <SelectValue placeholder="Select Timeline" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="all">All Timelines</SelectItem>
+        {timelines.map((timeline) => (
+          <SelectItem key={timeline} value={timeline}>
+            {timeline}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
   </div>
 );
 

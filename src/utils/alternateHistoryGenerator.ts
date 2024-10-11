@@ -6,7 +6,6 @@ import { z } from 'zod';
 
 import { HISTORY_TEMPLATE } from './promptTemplates';
 
-// Define the schema for the alternate history output
 const alternateHistorySchema = z.object({
   date: z.string(),
   title: z.string(),
@@ -19,7 +18,6 @@ export interface AlternateHistory {
   description: string;
 }
 
-// Define the OpenAI function schema
 const openAIFunction = {
   name: 'generate_alternate_history',
   description:

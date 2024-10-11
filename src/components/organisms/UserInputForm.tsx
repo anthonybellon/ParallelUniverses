@@ -1,7 +1,19 @@
-import React, { useState } from 'react';
-import FormField from '../molecules/FormField';
-import Button from '../atoms/Button';
-import { EventNode } from '../../data/events';
+'use client';
+
+import { SetStateAction, useState } from 'react';
+import { Card, CardContent, CardFooter, CardHeader } from '@components/ui/card';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@components/ui/select';
+import { Button } from '@components/ui/button';
+import { Textarea } from '@components/ui/textarea';
+import { Input } from '@components/ui/input';
+import { Label } from '@components/ui/label';
+import { EventNode } from 'src/data/events';
 
 interface UserInputFormProps {
   event: EventNode;
@@ -9,21 +21,21 @@ interface UserInputFormProps {
     event: EventNode,
     question: string,
     newTimelineName?: string,
-  ) => void;
+  ) => Promise<void>;
   closeModal: () => void;
 }
 
-const UserInputForm: React.FC<UserInputFormProps> = ({
+export default function UserInputForm({
   event,
   onSubmit,
   closeModal,
-}) => {
+}: UserInputFormProps) {
   const [question, setQuestion] = useState('');
   const [loading, setLoading] = useState(false);
   const [eventType, setEventType] = useState<
     'Splinter' | 'Continuation' | 'Embellish'
-  >('Continuation');
-  const [newTimelineName, setNewTimelineName] = useState(''); // State for new timeline name
+  >(event.eventType || 'Continuation');
+  const [newTimelineName, setNewTimelineName] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,48 +44,68 @@ const UserInputForm: React.FC<UserInputFormProps> = ({
   };
 
   return (
-    <div className="user-input-form">
+    <Card>
+      <CardHeader>
+        <h5>Create a Divergent Scenario for {event.name}</h5>
+      </CardHeader>
       <form onSubmit={handleSubmit}>
-        <h3>Create a Divergent Scenario for {event.name}</h3>
-        <FormField
-          label="What if..."
-          value={question}
-          onChange={(e) => setQuestion(e.target.value)}
-          placeholder="e.g., the event had a different outcome?"
-          required
-        />
-        <label>Event Type:</label>
-        <select
-          value={eventType}
-          onChange={(e) =>
-            setEventType(
-              e.target.value as 'Splinter' | 'Continuation' | 'Embellish',
-            )
-          }
-        >
-          <option value="Continuation">Continuation</option>
-          <option value="Splinter">Splinter</option>
-        </select>
+        <CardContent className="space-y-4">
+          <div className="max-h-64 overflow-y-auto">
+            <p>{event.description}</p>
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="eventType">Event Type</Label>
+            <Select
+              value={eventType}
+              onValueChange={(
+                value: 'Splinter' | 'Continuation' | 'Embellish',
+              ) => setEventType(value)}
+            >
+              <SelectTrigger id="eventType">
+                <SelectValue placeholder="Select event type" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="Continuation">Continuation</SelectItem>
+                <SelectItem value="Splinter">Splinter</SelectItem>
+                <SelectItem value="Embellish">Embellish</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="question">What if...</Label>
+            <Textarea
+              id="question"
+              placeholder="e.g., the event had a different outcome?"
+              value={question}
+              onChange={(e) => setQuestion(e.target.value)}
+              required
+            />
+          </div>
 
-        {eventType === 'Splinter' && (
-          <FormField
-            label="New Timeline Name:"
-            value={newTimelineName}
-            onChange={(e) => setNewTimelineName(e.target.value)}
-            placeholder="Enter new timeline name"
-            required
-          />
-        )}
-
-        <Button type="submit" disabled={loading}>
-          {loading ? 'Generating...' : 'Generate'}
-        </Button>
-        <Button type="button" onClick={closeModal}>
-          Cancel
-        </Button>
+          {eventType === 'Splinter' && (
+            <div className="space-y-2">
+              <Label htmlFor="newTimelineName">New Timeline Name</Label>
+              <Input
+                id="newTimelineName"
+                placeholder="Enter new timeline name"
+                value={newTimelineName}
+                onChange={(e: { target: { value: SetStateAction<string> } }) =>
+                  setNewTimelineName(e.target.value)
+                }
+                required
+              />
+            </div>
+          )}
+        </CardContent>
+        <CardFooter className="flex justify-between">
+          <Button variant="outline" onClick={closeModal}>
+            Cancel
+          </Button>
+          <Button type="submit" disabled={loading}>
+            {loading ? 'Generating...' : 'Generate'}
+          </Button>
+        </CardFooter>
       </form>
-    </div>
+    </Card>
   );
-};
-
-export default UserInputForm;
+}

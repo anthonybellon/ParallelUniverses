@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts';
 import { EventNode } from 'src/data/events';
@@ -14,6 +14,8 @@ interface CollapsibleTreeChartProps {
 const CollapsibleTreeChart: React.FC<CollapsibleTreeChartProps> = ({
   data,
 }) => {
+  const [chartHeight, setChartHeight] = useState('600px');
+
   const buildNestedTreeData = (timelines: EventNode[][]): TreeNode[] => {
     const rootNodes: TreeNode[] = [];
     const nodeMap = new Map<string, TreeNode>();
@@ -46,6 +48,15 @@ const CollapsibleTreeChart: React.FC<CollapsibleTreeChartProps> = ({
     return rootNodes;
   };
 
+  useEffect(() => {
+    const totalEvents = data.reduce(
+      (acc, timeline) => acc + timeline.length,
+      0,
+    );
+    const newHeight = Math.max(600, totalEvents * 20);
+    setChartHeight(`${newHeight}px`);
+  }, [data]);
+
   const nodes = buildNestedTreeData(data);
 
   const option = {
@@ -66,36 +77,36 @@ const CollapsibleTreeChart: React.FC<CollapsibleTreeChartProps> = ({
           ?.map((embellishment: string) => `<li>${embellishment}</li>`)
           .join('');
         const formattedDescription =
-          description.length > 150
+          description?.length > 150
             ? description.slice(0, 150) + '...'
-            : description;
+            : description || '';
 
         return `
-        <div style="max-width: 300px; word-wrap: break-word; white-space: normal;">
-          <strong>${name} (${eventType})</strong><br/>
-          <em>${date}</em><br/><br/>
-          <p style="margin: 0; line-height: 1.5;">${formattedDescription}</p>
-          ${embellishments ? `<ul style="margin: 0; line-height: 1.5;">${embellishmentsList}</ul>` : ''}
-        </div>
-      `;
+          <div style="max-width: 300px; word-wrap: break-word; white-space: normal;">
+            <strong>${name} (${eventType})</strong><br/>
+            <em>${date}</em><br/><br/>
+            <p style="margin: 0; line-height: 1.5;">${formattedDescription}</p>
+            ${embellishments ? `<ul style="margin: 0; line-height: 1.5;">${embellishmentsList}</ul>` : ''}
+          </div>
+        `;
       },
     },
     series: [
       {
         type: 'tree',
         data: nodes,
-        layout: 'orthogonal', // Use 'orthogonal' layout for clearer spacing in horizontal/vertical tree charts
-        top: '5%',
+        layout: 'orthogonal',
+        top: '1%',
         left: '5%',
-        bottom: '5%',
-        right: '10%', // Increased space to spread nodes
-        symbolSize: 10,
+        bottom: '1%',
+        right: '5%',
+        symbolSize: 20,
         roam: true,
         label: {
           position: 'top',
           verticalAlign: 'middle',
           align: 'middle',
-          fontSize: 12,
+          fontSize: 10,
           formatter: (node: { data: { name: string } }) => {
             const maxLength = 50;
             return node.data.name.length > maxLength
@@ -119,12 +130,20 @@ const CollapsibleTreeChart: React.FC<CollapsibleTreeChartProps> = ({
       },
     ],
   };
-
+  const handleChartReady = (chart: {
+    dispatchAction: (arg0: { type: string }) => void;
+  }) => {
+    chart.dispatchAction({
+      type: 'restore',
+    });
+  };
   return (
     <ReactECharts
+      key={JSON.stringify(data)}
       option={option}
-      style={{ height: '600px', width: '100vw' }}
+      style={{ height: chartHeight, width: '100vw' }}
       echarts={echarts}
+      onChartReady={handleChartReady}
     />
   );
 };
