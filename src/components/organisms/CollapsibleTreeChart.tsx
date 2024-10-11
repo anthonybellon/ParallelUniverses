@@ -8,25 +8,39 @@ interface TreeNode extends EventNode {
 }
 
 interface CollapsibleTreeChartProps {
-  data: EventNode[];
+  data: EventNode[][];
 }
 
 const CollapsibleTreeChart: React.FC<CollapsibleTreeChartProps> = ({
   data,
 }) => {
-  const buildNestedTreeData = (events: EventNode[]): TreeNode[] => {
-    const nodeMap = new Map<string, TreeNode>();
-    events.forEach((event) => {
-      nodeMap.set(event.id, { ...event, children: [] });
-    });
+  const buildNestedTreeData = (timelines: EventNode[][]): TreeNode[] => {
     const rootNodes: TreeNode[] = [];
-    events.forEach((event) => {
-      const node = nodeMap.get(event.id);
-      if (event.parentID && nodeMap.has(event.parentID)) {
-        nodeMap.get(event.parentID)?.children.push(node!);
-      } else {
-        rootNodes.push(node!);
-      }
+    const nodeMap = new Map<string, TreeNode>();
+
+    timelines.forEach((events) => {
+      events.forEach((event, index) => {
+        const node: TreeNode = { ...event, children: [] };
+        nodeMap.set(event.id, node);
+
+        if (index === 0) {
+          if (event.eventType === 'Splinter') {
+            const parentNode = nodeMap.get(event.parentID!);
+            if (parentNode) {
+              parentNode.children.push(node);
+            } else {
+              rootNodes.push(node);
+            }
+          } else {
+            rootNodes.push(node);
+          }
+        } else {
+          const parentNode = nodeMap.get(events[index - 1].id);
+          if (parentNode) {
+            parentNode.children.push(node);
+          }
+        }
+      });
     });
 
     return rootNodes;

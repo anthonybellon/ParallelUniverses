@@ -17,7 +17,7 @@ const getUniqueTimelineIDs = (events: EventData): string[] => {
 const HomePage: React.FC = () => {
   const [timelines, setTimelines] = useState<string[]>([]);
   const [selectedTimeline, setSelectedTimeline] = useState<string | null>(null);
-  const [timelineEvents, setTimelineEvents] = useState<EventNode[]>([]);
+  const [timelineEvents, setTimelineEvents] = useState<EventNode[][]>([]);
   const [allEvents, setAllEvents] = useState<EventData>({});
   const [selectedEvent, setSelectedEvent] = useState<EventNode | null>(null);
 
@@ -38,17 +38,14 @@ const HomePage: React.FC = () => {
 
   useEffect(() => {
     if (selectedTimeline === 'all') {
-      const allTimelineEvents = Object.values(allEvents).flat();
-      const sortedAllEvents = allTimelineEvents.sort(
-        (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
-      );
-      setTimelineEvents(sortedAllEvents);
+      const allTimelineEvents = Object.values(allEvents);
+      setTimelineEvents(allTimelineEvents);
       setSelectedEvent(null);
     } else if (selectedTimeline && allEvents[selectedTimeline]) {
       const sortedEvents = allEvents[selectedTimeline].sort(
         (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
       );
-      setTimelineEvents(sortedEvents);
+      setTimelineEvents([sortedEvents]);
       setSelectedEvent(null);
     }
   }, [selectedTimeline, allEvents]);
@@ -96,11 +93,8 @@ const HomePage: React.FC = () => {
 
         setAllEvents(updatedEvents);
         if (selectedTimeline) {
-          setTimelineEvents(
-            (updatedEvents[selectedTimeline] || []).sort(
-              (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
-            ),
-          );
+          const newTimelineEvents = Object.values(updatedEvents);
+          setTimelineEvents(newTimelineEvents);
         }
       }
     } catch (error) {
@@ -118,11 +112,11 @@ const HomePage: React.FC = () => {
       />
       {selectedTimeline && (
         <SelectEvent
-          events={timelineEvents}
+          events={timelineEvents.flat()}
           selectedEventId={selectedEvent?.id || null}
           onSelect={(id) =>
             setSelectedEvent(
-              timelineEvents.find((event) => event.id === id) || null,
+              timelineEvents.flat().find((event) => event.id === id) || null,
             )
           }
         />

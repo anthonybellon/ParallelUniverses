@@ -19,8 +19,7 @@
       "name": "Start of World War I",
       "date": "1914-07-28",
       "description": "WWI begins after the assassination of Archduke Franz Ferdinand.",
-      "eventType": "Continuation",
-      "parentID": "1"
+      "eventType": "Continuation"
     },
     {
       "id": "3",
@@ -28,8 +27,7 @@
       "name": "Moon Landing",
       "date": "1969-07-20",
       "description": "Apollo 11 lands the first humans on the Moon.",
-      "eventType": "Continuation",
-      "parentID": "2"
+      "eventType": "Continuation"
     },
     {
       "id": "4",
@@ -37,8 +35,7 @@
       "name": "Fall of the Berlin Wall",
       "date": "1989-11-09",
       "description": "Marks the symbolic end of the Cold War.",
-      "eventType": "Continuation",
-      "parentID": "3"
+      "eventType": "Continuation"
     }
   ],
   "2": [
@@ -58,7 +55,6 @@
       "name": "The Soaring Dawn of Aviation and Economic Descent",
       "date": "1910-01-01",
       "description": "Following their initial setbacks, the Wright brothers receive unexpected financial backing from a visionary investor in 1903, propelling their aviation experiments forward. By 1905, powered flight is successfully demonstrated, sparking an immediate global interest and investment in aviation technology. The rapid advancement of aviation becomes a hallmark of the early 20th century. However, by 1910, the world faces an unforeseen economic crash triggered by speculative investments and a market bubble burst linked to aviation stocks. Despite the economic downturn, the established foundation of aviation persists. The industry struggles but continues to advance slowly, balancing innovation with newfound caution in financial markets. As nations recover, the delayed promise of accessible and widespread air travel eventually transforms global communication and transportation, albeit through a more gradual and turbulent path.",
-      "parentID": "1728595674745",
       "eventType": "Continuation",
       "embellishments": []
     },
@@ -68,7 +64,6 @@
       "name": "The Wings of War: Aviation's Crucible",
       "date": "1914-07-28",
       "description": "The successful advancement of aviation technology in the early 20th century, initially fueled by speculative investments and eventual economic caution, takes a drastic turn with the outbreak of World War I in 1914. Nations, having recovered from the 1910 economic downturn, rapidly mobilize their burgeoning aviation industries for military purposes. The Wright brothers' innovations and the global interest in flight lead to significant military applications, fundamentally altering the course of the war. In this alternate timeline, the potential for aviation as a tool of war accelerates technological progress. The conflicts in the skies become as pivotal as those on the ground, leading to swift advancements in aircraft design and aerial tactics. By the end of the war, aviation emerges not only as a crucial military asset but also as a springboard for post-war economic revitalization. The shared international experience of aviation in wartime catalyzes future cooperation and treaties focused on aviation safety and commercialization, paving a faster, more resilient path to global air travel and connectivity.",
-      "parentId": "1728595787070",
       "eventType": "Continuation",
       "embellishments": []
     },
@@ -78,7 +73,6 @@
       "name": "Jet-Powered Ascent: Aviation and Economic Triumph",
       "date": "1935-01-01",
       "description": "In a groundbreaking development in 1930, the Wright brothers, building on their earlier successes, manage to prototype a jet engine with the help of an innovative and relentless team of engineers. The initial test flights in 1931 are met with skepticism, but soon the world acknowledges the sheer potential of this technology. By 1935, jet-powered aircraft redefine air travel, offering unheard-of speeds and transforming the aviation industry into a leading economic driver. The economic landscape thrives as aviation becomes a cornerstone of global commerce and connectivity. Investment in aviation reaches unprecedented heights, leading to rapid advancements not only in transportation but also in air defense. As World War II looms, countries equipped with jet technology find themselves significantly advantaged, reshaping military strategies and alliances. This technological leap fosters stronger international ties and a collaborative spirit, ultimately contributing to a shortened duration of World War II and laying the groundwork for a prosperous post-war global economy. The discovery and commercialization of the jet engine ushered in a new era of rapid technological progress and international cooperation, setting the stage for the modern world we know today.",
-      "parentId": "1728597777343",
       "eventType": "Continuation",
       "embellishments": []
     }
@@ -93,6 +87,36 @@
       "eventType": "Splinter",
       "parentID": "1",
       "embellishments": []
+    },
+    {
+      "id": "1728644718329",
+      "timelineID": "3",
+      "name": "The Allied Discovery and Preemption",
+      "date": "1938-09-10",
+      "description": "In this alternate history, Allied intelligence agencies discover Germany's advancements in jet technology much earlier than anticipated, thanks to an unexpected defector who provides crucial information in late 1933. The Allies, shocked by the potential threat of jet-powered aircraft, form a secret coalition to counteract this technological edge. By 1935, a network of espionage and industrial collaboration between Britain, France, and the United States is established. The coalition focuses on developing improved radar systems and anti-aircraft weaponry to counteract the expected air superiority of the German Luftwaffe.\n\nOn September 10, 1938, with tensions in Europe rising, the Allies publicly announce their advancements in air defense and showcase a prototype of their own jet-powered aircraft during a diplomatic meeting. The demonstration serves as a deterrence, making it clear that any aggressive moves by Germany would be met with a robust and technologically advanced response.\n\nThis revelation forces Germany to rethink its expansionist strategies. Without a decisive aerial advantage and facing the united front of powerful nations, Hitler is compelled to slow down his military ambitions. Diplomatic negotiations and strategic alliances become the focus, delaying the onset of widespread conflict until new strategies are devised.\n\nThe geopolitical landscape shifts, with countries investing more in diplomatic solutions and technological parity through collaboration. The delayed war efforts allow for more preparation and cautious advancement, leading to a different form of conflict where diplomacy plays a significant role in shaping the 20th-century world order. As a result, the post-war recovery is less strenuous, paving the way for a faster and more even global economic growth.",
+      "eventType": "Continuation",
+      "embellishments": []
+    },
+    {
+      "id": "1728644679829",
+      "timelineID": "3",
+      "name": "The Allied Jet Revolution",
+      "date": "1940-05-01",
+      "description": "In this alternate universe, the global response to the German jet-powered Blitzkrieg of 1935 spurs an unprecedented collaborative effort among Allied nations. By pooling scientific talent and resources, the Allies overcome their initial technological disadvantage. By 1940, a breakthrough in jet propulsion technology occurs simultaneously in the United States, United Kingdom, and Soviet Union. On May 1, 1940, the Allies launch a coordinated counteroffensive using their newly developed jet-powered aircraft fleets. The immense speed and improved designs rival those of the German Luftwaffe, shifting the balance of aerial power. This marks the beginning of the 'Allied Jet Revolution,' an era where air combat dominates military strategies. As a result, the war focuses heavily on air battles, with ground offensives playing a secondary role. The prolonged conflict sees rapid advancements in jet technology, radar systems, and aerial tactics, ultimately leading to the exhaustion of resources for both the Axis and Allied powers. By 1945, the war ends not with a decisive victory but a mutual agreement for a ceasefire, driven by the economic devastation and stalemates in air warfare. Global alliances are redefined, prioritizing cooperative technological development and economic rebuilding. The post-war world witnesses a transformation in international relations, emphasizing diplomacy and scientific collaboration, laying the groundwork for future global institutions that prevent such widespread conflicts.",
+      "eventType": "Continuation",
+      "embellishments": []
+    }
+  ],
+  "4": [
+    {
+      "id": "1728644624739",
+      "timelineID": "4",
+      "name": "Soviet Moon Landing",
+      "date": "1969-07-15",
+      "description": "On July 15, 1969, the Soviet space mission was the first to successfully land humans on the Moon. The mission, led by cosmonauts Alexei Leonov and Valentina Tereshkova, achieved this historic feat ahead of the United States. The Soviets' Luna 15 mission marked a significant victory in the Space Race and altered global perspectives on space exploration. Their landing and the moonwalk were broadcast live, showcasing the USSR's technological prowess and further intensifying the Cold War's competitive dynamic in space exploration. This event drastically changed the trajectory of the space race, fostering a shift in space exploration priorities and collaboration between nations in the following years.",
+      "eventType": "Splinter",
+      "embellishments": [],
+      "parentID": "3"
     }
   ]
 }

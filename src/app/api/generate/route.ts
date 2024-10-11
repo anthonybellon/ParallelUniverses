@@ -55,6 +55,7 @@ export async function POST(req: NextRequest) {
         description: alternateHistory.description,
         eventType: event.eventType,
         embellishments: [],
+        ...(event.eventType === 'Splinter' && { parentID: event.id }),
       };
 
       const timelineID = newEvent.timelineID;
