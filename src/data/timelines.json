@@ -117,6 +117,15 @@
       "eventType": "Splinter",
       "embellishments": [],
       "parentID": "3"
+    },
+    {
+      "id": "1728645094450",
+      "timelineID": "4",
+      "name": "American Moon Triumph: Apollo 11 Lands First",
+      "date": "1969-07-20",
+      "description": "On July 20, 1969, the world watched as the United States achieved a monumental milestone in space exploration with the successful landing of Apollo 11 on the lunar surface. Astronauts Neil Armstrong and Edwin 'Buzz' Aldrin became the first humans to walk on the Moon, while Michael Collins orbited in the Command Module. This achievement, broadcast live to a global audience, represented a pivotal victory for the United States in the Space Race and established NASA as a premier force in space exploration. Consequently, this event not only enhanced pride and unity in the United States but also set a new course for international cooperation in space science and exploration, leading to collaborative missions with other nations in subsequent decades. The achievement prompted increased investment in STEM education and created a generation inspired to pursue careers in science and engineering, significantly influencing technological advancement and innovation.",
+      "eventType": "Continuation",
+      "embellishments": []
     }
   ]
 }

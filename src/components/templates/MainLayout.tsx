@@ -5,31 +5,19 @@ interface MainLayoutProps {
 }
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => (
-  <div className="main-layout">
+  <div className="min-h-[100vh] min-w-[100vw] flex-col">
     <header>
       <h1>Parallel Universe Maker</h1>
     </header>
-    <main>{children}</main>
+    <div className="flex w-full">{children}</div>
     <footer>
       <p>&copy; {new Date().getFullYear()} Parallel Universe Maker</p>
     </footer>
     <style jsx>{`
-      .main-layout {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        min-width: 100vw;
-      }
       header {
         text-align: center;
         padding: 20px;
         background-color: #f0f0f0;
-      }
-      main {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
       }
       footer {
         text-align: center;

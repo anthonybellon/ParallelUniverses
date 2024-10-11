@@ -71,29 +71,37 @@ const CollapsibleTreeChart: React.FC<CollapsibleTreeChartProps> = ({
             : description;
 
         return `
-          <div style="max-width: 300px; word-wrap: break-word; white-space: normal;">
-            <strong>${name} (${eventType})</strong><br/>
-            <em>${date}</em><br/><br/>
-            <p style="margin: 0; line-height: 1.5;">${formattedDescription}</p>
-            ${embellishments ? `<ul style="margin: 0; line-height: 1.5;">${embellishmentsList}</ul>` : ''}
-          </div>
-        `;
+        <div style="max-width: 300px; word-wrap: break-word; white-space: normal;">
+          <strong>${name} (${eventType})</strong><br/>
+          <em>${date}</em><br/><br/>
+          <p style="margin: 0; line-height: 1.5;">${formattedDescription}</p>
+          ${embellishments ? `<ul style="margin: 0; line-height: 1.5;">${embellishmentsList}</ul>` : ''}
+        </div>
+      `;
       },
     },
     series: [
       {
         type: 'tree',
         data: nodes,
+        layout: 'orthogonal', // Use 'orthogonal' layout for clearer spacing in horizontal/vertical tree charts
         top: '5%',
-        left: '20%',
+        left: '5%',
         bottom: '5%',
-        right: '20%',
+        right: '10%', // Increased space to spread nodes
         symbolSize: 10,
+        roam: true,
         label: {
           position: 'top',
           verticalAlign: 'middle',
-          align: 'center',
+          align: 'middle',
           fontSize: 12,
+          formatter: (node: { data: { name: string } }) => {
+            const maxLength = 50;
+            return node.data.name.length > maxLength
+              ? node.data.name.substring(0, maxLength) + '...'
+              : node.data.name;
+          },
         },
         expandAndCollapse: true,
         initialTreeDepth: -1,
@@ -103,6 +111,11 @@ const CollapsibleTreeChart: React.FC<CollapsibleTreeChartProps> = ({
           width: 2,
           curveness: 0.5,
         },
+        orient: 'LR',
+        nodePadding: 20,
+        itemStyle: {
+          borderWidth: 1,
+        },
       },
     ],
   };
@@ -110,7 +123,7 @@ const CollapsibleTreeChart: React.FC<CollapsibleTreeChartProps> = ({
   return (
     <ReactECharts
       option={option}
-      style={{ height: '600px', width: '100%' }}
+      style={{ height: '600px', width: '100vw' }}
       echarts={echarts}
     />
   );

@@ -21,18 +21,19 @@ const HomePage: React.FC = () => {
   const [allEvents, setAllEvents] = useState<EventData>({});
   const [selectedEvent, setSelectedEvent] = useState<EventNode | null>(null);
 
-  useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const response = await fetch('/api/events');
-        const events: EventData = await response.json();
+  const fetchEvents = async () => {
+    try {
+      const response = await fetch('/api/events');
+      const events: EventData = await response.json();
 
-        setAllEvents(events);
-        setTimelines(getUniqueTimelineIDs(events));
-      } catch (error) {
-        console.error('Error fetching events:', error);
-      }
-    };
+      setAllEvents(events);
+      setTimelines(getUniqueTimelineIDs(events));
+    } catch (error) {
+      console.error('Error fetching events:', error);
+    }
+  };
+
+  useEffect(() => {
     fetchEvents();
   }, []);
 
@@ -92,10 +93,7 @@ const HomePage: React.FC = () => {
         }
 
         setAllEvents(updatedEvents);
-        if (selectedTimeline) {
-          const newTimelineEvents = Object.values(updatedEvents);
-          setTimelineEvents(newTimelineEvents);
-        }
+        await fetchEvents(); // Refresh events after adding a new event
       }
     } catch (error) {
       console.error('Error generating alternate history:', error);
@@ -104,30 +102,39 @@ const HomePage: React.FC = () => {
 
   return (
     <MainLayout>
-      <CollapsibleTreeChart data={timelineEvents} />
-      <SelectTimeline
-        timelines={timelines}
-        selectedTimeline={selectedTimeline}
-        onSelect={setSelectedTimeline}
-      />
-      {selectedTimeline && (
-        <SelectEvent
-          events={timelineEvents.flat()}
-          selectedEventId={selectedEvent?.id || null}
-          onSelect={(id) =>
-            setSelectedEvent(
-              timelineEvents.flat().find((event) => event.id === id) || null,
-            )
-          }
-        />
-      )}
-      {selectedEvent && (
-        <UserInputForm
-          event={selectedEvent}
-          onSubmit={addEvent}
-          closeModal={() => setSelectedEvent(null)}
-        />
-      )}
+      <div className="grid w-[100vh] grid-cols-1">
+        <CollapsibleTreeChart data={timelineEvents} />
+
+        {/* Container for SelectTimeline, SelectEvent, and UserInputForm */}
+        <div style={{ marginTop: '20px', textAlign: 'center' }}>
+          <SelectTimeline
+            timelines={timelines}
+            selectedTimeline={selectedTimeline}
+            onSelect={setSelectedTimeline}
+          />
+          {selectedTimeline && (
+            <SelectEvent
+              events={timelineEvents.flat()}
+              selectedEventId={selectedEvent?.id || null}
+              onSelect={(id) =>
+                setSelectedEvent(
+                  timelineEvents.flat().find((event) => event.id === id) ||
+                    null,
+                )
+              }
+            />
+          )}
+          {selectedEvent && (
+            <div style={{ marginTop: '20px' }}>
+              <UserInputForm
+                event={selectedEvent}
+                onSubmit={addEvent}
+                closeModal={() => setSelectedEvent(null)}
+              />
+            </div>
+          )}
+        </div>
+      </div>
     </MainLayout>
   );
 };
