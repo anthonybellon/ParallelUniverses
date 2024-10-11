@@ -18,6 +18,7 @@ const SelectTimeline: React.FC<SelectTimelineProps> = ({
       onChange={(e) => onSelect(e.target.value)}
     >
       <option value="">Select Timeline</option>
+      <option value="all">All Timelines</option>{' '}
       {timelines.map((timeline) => (
         <option key={timeline} value={timeline}>
           Timeline {timeline}

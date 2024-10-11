@@ -37,7 +37,14 @@ const HomePage: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (selectedTimeline && allEvents[selectedTimeline]) {
+    if (selectedTimeline === 'all') {
+      const allTimelineEvents = Object.values(allEvents).flat();
+      const sortedAllEvents = allTimelineEvents.sort(
+        (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
+      );
+      setTimelineEvents(sortedAllEvents);
+      setSelectedEvent(null);
+    } else if (selectedTimeline && allEvents[selectedTimeline]) {
       const sortedEvents = allEvents[selectedTimeline].sort(
         (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
       );

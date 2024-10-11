@@ -14,31 +14,38 @@ interface CollapsibleTreeChartProps {
 const CollapsibleTreeChart: React.FC<CollapsibleTreeChartProps> = ({
   data,
 }) => {
-  const buildTreeData = (events: EventNode[]): TreeNode[] => {
-    if (!events.length) return [];
+  const buildNestedTreeData = (events: EventNode[]): TreeNode[] => {
+    const nodeMap = new Map<string, TreeNode>();
+    events.forEach((event) => {
+      nodeMap.set(event.id, { ...event, children: [] });
+    });
+    const rootNodes: TreeNode[] = [];
+    events.forEach((event) => {
+      const node = nodeMap.get(event.id);
+      if (event.parentID && nodeMap.has(event.parentID)) {
+        nodeMap.get(event.parentID)?.children.push(node!);
+      } else {
+        rootNodes.push(node!);
+      }
+    });
 
-    const sortedEvents = [...events].sort(
-      (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
-    );
-
-    const root: TreeNode = { ...sortedEvents[0], children: [] };
-    let currentNode = root;
-
-    for (let i = 1; i < sortedEvents.length; i++) {
-      const newNode: TreeNode = { ...sortedEvents[i], children: [] };
-      currentNode.children = [newNode];
-      currentNode = newNode;
-    }
-
-    return [root];
+    return rootNodes;
   };
 
-  const treeData = buildTreeData(data);
+  const nodes = buildNestedTreeData(data);
 
   const option = {
     tooltip: {
       trigger: 'item',
-      formatter: (params: echarts.EChartOption.Tooltip.Format) => {
+      formatter: (params: {
+        data: {
+          name: string;
+          date: string;
+          description: string;
+          eventType: string;
+          embellishments: string[];
+        };
+      }) => {
         const { name, date, description, eventType, embellishments } =
           params.data;
         const embellishmentsList = embellishments
@@ -62,7 +69,7 @@ const CollapsibleTreeChart: React.FC<CollapsibleTreeChartProps> = ({
     series: [
       {
         type: 'tree',
-        data: treeData,
+        data: nodes,
         top: '5%',
         left: '20%',
         bottom: '5%',
@@ -75,8 +82,8 @@ const CollapsibleTreeChart: React.FC<CollapsibleTreeChartProps> = ({
           fontSize: 12,
         },
         expandAndCollapse: true,
-        initialTreeDepth: 2,
-        animationDuration: 750,
+        initialTreeDepth: -1,
+        animationDuration: 550,
         animationEasing: 'cubicOut',
         lineStyle: {
           width: 2,

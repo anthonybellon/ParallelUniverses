@@ -1,4 +1,3 @@
-/* eslint-disable quotes */
 export interface EventNode {
   id: string;
   name: string;
@@ -7,4 +6,5 @@ export interface EventNode {
   timelineID: string;
   eventType: 'Splinter' | 'Continuation' | 'Embellish';
   embellishments?: string[];
+  parentID?: string;
 }
