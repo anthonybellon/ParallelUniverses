@@ -25,7 +25,7 @@ Content: {content}
 
 export const openAIFunction = {
   name: 'determine_intent',
-  description: "Determine the user's intent based on the provided content",
+  description: 'Identify the intent from the user based on provided content',
   parameters: {
     title: 'determine_intent',
     description: 'Identify the intent from the content',

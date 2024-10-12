@@ -7,9 +7,6 @@ import { z } from 'zod';
 
 export const determineIntent = async (content: string) => {
   try {
-    const intentSchema = z.object({
-      content: z.string().min(1, 'Content cannot be empty'),
-    });
     const model = new ChatOpenAI({
       apiKey: process.env.OPENAI_API_KEY,
       model: 'gpt-4o-mini-2024-07-18',
