@@ -1,140 +1,56 @@
-# Next.js Template Project
+# Parallel Universe Simulator
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Note: This project is a work in progress, with ongoing feature development and improvements.
 
-## Getting Started
+## Project Overview
 
-First, install the dependencies:
+The Parallel Universe Simulator is an AI-powered application for exploring alternate realities. By branching off from any point in Earth’s timeline, you can create unique “what if” scenarios and visualize these timelines individually or collectively. This provides a dynamic way to explore alternate histories.
 
-```bash
+## Features
+
+    •	AI-Powered Divergence: Use ChatGPT to create divergent historical events based on your specific “what if” scenarios.
+    •	Interactive Timeline Visualization: Visualize timelines in a collapsible tree format using ECharts, organized chronologically for easy exploration.
+    •	Multiple Timeline Management: Create, manage, and explore parallel timelines, each with its own unique set of events.
+    •	Dynamic Event Creation: Add events at any point in a timeline or start new splintered timelines from existing events.
+
+## Project Structure
+
+Built with Next.js and TypeScript, the project follows atomic design principles. Timeline data is stored locally in JSON format, managed through helper functions to handle reading, writing, and chronological organization.
+
+## How It Works
+
+    1.	Select a Timeline: Choose an existing timeline to explore.
+    2.	Pick an Event: Select a specific event where you want to branch off.
+    3.	Create Alternate Histories: Input your “what if” scenario.
+    4.	Decide the Path: Choose to either splinter into a new universe or continue the existing one.
+    5.	Generate an Alternate History: The AI crafts a new alternate history based on your input.
+    6.	Visualize and Explore: View and compare your alternate histories within a collapsible timeline.
+
+## Installation
+
+    1.	Clone the repository:
+
+git clone git@github.com:anthonybellon/ParallelUniverses.git
+
+    2.	Install dependencies:
+
+cd ParallelUniverses
 npm install
-# or
-yarn install
-# or
-pnpm install
-# or
-bun install
-```
 
-Then, run the development server:
+    3.	Set up environment variables:
 
-```bash
+Create a .env.local file and add your OpenAI API key:
+OPENAI_API_KEY= # OpenAI API Key
+
+    4.	Run the development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    5.	Open the application at http://localhost:3000 to explore the Parallel Universe Simulator.
 
-You can start editing the page by modifying `app/[locale]/page.tsx`. The page auto-updates as you edit the file.
+## Roadmap
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Scripts
-
-- `npm run dev`: Runs the development server.
-- `npm run build`: Builds the application for production.
-- `npm run start`: Starts the production build.
-- `npm run prod`: Exports the application as static files.
-- `npm run lint`: Runs ESLint to lint the project.
-- `npm run test`: Runs the tests using Jest.
-- `npm run test:watch`: Runs the tests in watch mode.
-
-## Troubleshooting
-
-If you encounter issues during the build process, try setting the `NODE_ENV` to production and then running the build again:
-
-```bash
-export NODE_ENV=production
-npm run build
-```
-
-## Dependencies
-
-### Core Dependencies
-
-- `next`: Framework for server-rendered React applications.
-- `react`: JavaScript library for building user interfaces.
-- `react-dom`: Serves as the entry point to the DOM and server renderers for React.
-
-### UI Components
-
-- `@radix-ui/react-checkbox`: Accessible checkbox component.
-- `@radix-ui/react-icons`: Collection of icons.
-- `@radix-ui/react-label`: Accessible label component.
-- `@radix-ui/react-select`: Accessible select component.
-- `@radix-ui/react-slot`: Slot component for flexible component composition.
-- `lucide-react`: Icon library.
-
-### Styling
-
-- `tailwindcss`: Utility-first CSS framework.
-- `autoprefixer`: Parses CSS and adds vendor prefixes.
-- `tailwind-merge`: Utility to merge Tailwind CSS classes.
-- `tailwindcss-animate`: Tailwind CSS plugin for animations.
-
-### Utilities
-
-- `clsx`: Utility for constructing `className` strings conditionally.
-- `dotenv`: Loads environment variables from a `.env` file.
-- `firebase`: Firebase SDK for the backend services.
-
-### Internationalization
-
-- `next-intl`: Internationalization framework for Next.js.
-
-### Linting and Formatting
-
-- `eslint`: Linting utility for JavaScript and TypeScript.
-- `eslint-config-next`: ESLint configuration for Next.js.
-- `eslint-config-prettier`: Turns off all ESLint rules that are unnecessary or might conflict with Prettier.
-- `prettier`: Code formatter.
-- `prettier-plugin-tailwindcss`: Prettier plugin for Tailwind CSS.
-
-### Testing
-
-- `cypress`: End-to-end testing framework.
-- `jest`: JavaScript testing framework.
-- `ts-jest`: TypeScript preprocessor for Jest.
-- `@testing-library/react`: Simple and complete React DOM testing utilities.
-- `@testing-library/jest-dom`: Custom jest matchers for the DOM.
-- `@testing-library/user-event`: Fire events the same way the user does.
-
-### TypeScript
-
-- `typescript`: TypeScript language support.
-- `ts-node`: TypeScript execution environment for Node.js.
-- `@types/*`: TypeScript definitions for various libraries.
-
-### Development Tools
-
-- `husky`: Git hooks for linting and testing.
-
-## Husky Hooks
-
-This project uses Husky to ensure code quality:
-
-- `pre-commit`: Runs `npm run lint` and `npm run test` before committing changes.
-
-## Resolutions
-
-- `punycode`: Ensures compatibility with certain dependencies.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    •	AI Response Customization: Allow users to adjust the tone and style of AI-generated responses.
+    •	Firebase Integration: Expand storage options beyond local storage.
+    •	Extended Timeline Range: Support additional historical periods beyond the current 1900-to-present day focus.
+    •	Enhanced Visualization Options: Include 3D visualization or geospatial views for richer exploration.
