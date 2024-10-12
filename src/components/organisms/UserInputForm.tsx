@@ -23,12 +23,14 @@ interface UserInputFormProps {
     newTimelineName?: string,
   ) => Promise<void>;
   closeModal: () => void;
+  existingTimelineNames: string[]; // New prop for existing timeline names
 }
 
 export default function UserInputForm({
   event,
   onSubmit,
   closeModal,
+  existingTimelineNames, // New prop
 }: UserInputFormProps) {
   const [question, setQuestion] = useState('');
   const [loading, setLoading] = useState(false);
@@ -36,9 +38,26 @@ export default function UserInputForm({
     'Splinter' | 'Continuation' | 'Embellish'
   >(event.eventType || 'Continuation');
   const [newTimelineName, setNewTimelineName] = useState('');
+  const [error, setError] = useState<string | null>(null); // New state for error handling
+
+  const handleNameChange = (e: {
+    target: { value: SetStateAction<string> };
+  }) => {
+    const name = e.target.value as string;
+    setNewTimelineName(name);
+
+    // Check for duplicate name immediately as user types
+    if (existingTimelineNames.includes(name)) {
+      setError('Universe already exists. Please choose another name.');
+    } else {
+      setError(null);
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (error) return; // Prevent submission if there's an error
     setLoading(true);
     onSubmit({ ...event, eventType }, question, newTimelineName);
   };
@@ -67,7 +86,6 @@ export default function UserInputForm({
               <SelectContent>
                 <SelectItem value="Continuation">Continuation</SelectItem>
                 <SelectItem value="Splinter">Splinter</SelectItem>
-                <SelectItem value="Embellish">Embellish</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -84,16 +102,15 @@ export default function UserInputForm({
 
           {eventType === 'Splinter' && (
             <div className="space-y-2">
-              <Label htmlFor="newTimelineName">New Timeline Name</Label>
+              <Label htmlFor="newTimelineName">New Universe Name</Label>
               <Input
                 id="newTimelineName"
                 placeholder="Enter new timeline name"
                 value={newTimelineName}
-                onChange={(e: { target: { value: SetStateAction<string> } }) =>
-                  setNewTimelineName(e.target.value)
-                }
+                onChange={handleNameChange} // Validate as user types
                 required
               />
+              {error && <p className="text-base text-red-500">{error}</p>}
             </div>
           )}
         </CardContent>
@@ -101,7 +118,7 @@ export default function UserInputForm({
           <Button variant="outline" onClick={closeModal}>
             Cancel
           </Button>
-          <Button type="submit" disabled={loading}>
+          <Button type="submit" disabled={loading || !!error}>
             {loading ? 'Generating...' : 'Generate'}
           </Button>
         </CardFooter>

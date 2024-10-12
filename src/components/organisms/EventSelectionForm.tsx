@@ -52,6 +52,7 @@ const EventSelectionForm: React.FC<EventSelectionFormProps> = ({
             event={selectedEvent}
             onSubmit={addEvent}
             closeModal={() => setSelectedEvent(null)}
+            existingTimelineNames={timelines}
           />
         </div>
       )}

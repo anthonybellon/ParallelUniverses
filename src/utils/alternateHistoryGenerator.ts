@@ -53,7 +53,8 @@ export const generateAlternateHistory = async (
 
     const model = new ChatOpenAI({
       apiKey: process.env.OPENAI_API_KEY!,
-      model: 'gpt-4o',
+      model: 'gpt-4o-mini',
+      maxTokens: 100,
     });
 
     const promptContent = HISTORY_TEMPLATE.replace('{date}', date)
