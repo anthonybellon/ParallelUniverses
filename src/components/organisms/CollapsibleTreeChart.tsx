@@ -66,17 +66,17 @@ const CollapsibleTreeChart: React.FC<CollapsibleTreeChartProps> = ({
       trigger: 'item',
       formatter: (params: {
         data: {
-          name: any;
-          date: any;
-          description: any;
-          eventType: any;
-          embellishments: any;
+          name: string;
+          date: string;
+          description: string;
+          eventType: EventNode;
+          embellishments: string[];
         };
       }) => {
         const { name, date, description, eventType, embellishments } =
           params.data;
         const embellishmentsList = embellishments
-          ?.map((embellishment: any) => `<li>${embellishment}</li>`)
+          ?.map((embellishment: string) => `<li>${embellishment}</li>`)
           .join('');
         const formattedDescription =
           description?.length > 150
