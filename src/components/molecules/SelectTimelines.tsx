@@ -21,7 +21,7 @@ const SelectTimeline: React.FC<SelectTimelineProps> = ({
   onSelect,
 }) => (
   <div className="flex flex-col space-y-2 p-6">
-    <Label htmlFor="timeline-select">Select a Timeline:</Label>
+    <Label htmlFor="timeline-select">Select a Universe:</Label>
     <Select
       onValueChange={(value) => onSelect(value)}
       value={selectedTimeline || undefined}
@@ -30,7 +30,7 @@ const SelectTimeline: React.FC<SelectTimelineProps> = ({
         <SelectValue placeholder="Select Timeline" />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value="all">All Timelines</SelectItem>
+        <SelectItem value="all">All Universes</SelectItem>
         {timelines.map((timeline) => (
           <SelectItem key={timeline} value={timeline}>
             {timeline}

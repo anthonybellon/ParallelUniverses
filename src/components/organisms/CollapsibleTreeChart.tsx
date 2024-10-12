@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts';
 import { EventNode } from 'src/data/events';
+import { Button } from '@components/ui/button';
 
 interface TreeNode extends EventNode {
   children: TreeNode[];
@@ -15,6 +16,7 @@ const CollapsibleTreeChart: React.FC<CollapsibleTreeChartProps> = ({
   data,
 }) => {
   const [chartHeight, setChartHeight] = useState('600px');
+  const [resetKey, setResetKey] = useState(Date.now()); // State for triggering re-render
 
   const buildNestedTreeData = (timelines: EventNode[][]): TreeNode[] => {
     const rootNodes: TreeNode[] = [];
@@ -64,17 +66,17 @@ const CollapsibleTreeChart: React.FC<CollapsibleTreeChartProps> = ({
       trigger: 'item',
       formatter: (params: {
         data: {
-          name: string;
-          date: string;
-          description: string;
-          eventType: string;
-          embellishments: string[];
+          name: any;
+          date: any;
+          description: any;
+          eventType: any;
+          embellishments: any;
         };
       }) => {
         const { name, date, description, eventType, embellishments } =
           params.data;
         const embellishmentsList = embellishments
-          ?.map((embellishment: string) => `<li>${embellishment}</li>`)
+          ?.map((embellishment: any) => `<li>${embellishment}</li>`)
           .join('');
         const formattedDescription =
           description?.length > 150
@@ -130,21 +132,24 @@ const CollapsibleTreeChart: React.FC<CollapsibleTreeChartProps> = ({
       },
     ],
   };
-  const handleChartReady = (chart: {
-    dispatchAction: (arg0: { type: string }) => void;
-  }) => {
-    chart.dispatchAction({
-      type: 'restore',
-    });
+
+  const handleReset = () => {
+    setResetKey(Date.now()); // Update resetKey to re-render chart
   };
+
   return (
-    <ReactECharts
-      key={JSON.stringify(data)}
-      option={option}
-      style={{ height: chartHeight, width: '100vw' }}
-      echarts={echarts}
-      onChartReady={handleChartReady}
-    />
+    <div>
+      <div className="p-10">
+        <Button onClick={handleReset}>Reframe View</Button>
+      </div>
+      <ReactECharts
+        key={`${resetKey}-${JSON.stringify(data)}`} // Unique key to trigger re-render
+        option={option}
+        style={{ height: chartHeight, width: '100vw' }}
+        echarts={echarts}
+        onChartReady={(chart) => chart.dispatchAction({ type: 'restore' })}
+      />
+    </div>
   );
 };
 

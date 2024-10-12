@@ -43,6 +43,7 @@ const EventSelectionForm: React.FC<EventSelectionFormProps> = ({
           onSelect={(id) =>
             setSelectedEvent(events.find((event) => event.id === id) || null)
           }
+          selectedTimeline={selectedTimeline}
         />
       )}
       {selectedEvent && (
