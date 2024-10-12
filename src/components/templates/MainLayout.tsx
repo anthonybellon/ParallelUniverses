@@ -51,9 +51,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
         </div>
       </main>
       <footer className="bg-gray-200 py-3 text-center text-sm">
-        <p>
-          &copy; {new Date().getFullYear()} {t('footer')}
-        </p>
+        <p>&copy; {new Date().getFullYear()}</p>
       </footer>
     </div>
   );

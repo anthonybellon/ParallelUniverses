@@ -53,11 +53,32 @@ const HomePage: React.FC = () => {
     newTimelineName?: string,
   ) => {
     try {
+      // Moderation check
+      const moderationRes = await fetch('/api/moderation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ text: question }),
+      });
+
+      if (!moderationRes.ok) {
+        throw new Error('Error during moderation check.');
+      }
+
+      const { isFlagged } = await moderationRes.json();
+      if (isFlagged) {
+        alert('Content is flagged. Please try rephrasing your message.');
+        return; // Stop the process here if content is flagged
+      }
+
+      // Proceed with generating the alternate history if moderation is clear
       const response = await fetch('/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ event, question, newTimelineName }),
       });
+
       const data = await response.json();
 
       if (response.ok) {
@@ -73,6 +94,8 @@ const HomePage: React.FC = () => {
           eventType: event.eventType,
           embellishments: [],
         };
+
+        // Handle new events and timelines
         const updatedEvents = { ...allEvents };
         if (isSplinter && newTimelineName) {
           updatedEvents[newTimelineName] = [newEvent];
@@ -86,7 +109,7 @@ const HomePage: React.FC = () => {
             ];
           }
         }
-        setAllEvents(allEvents);
+        setAllEvents(updatedEvents);
         await fetchEvents();
       }
     } catch (error) {
