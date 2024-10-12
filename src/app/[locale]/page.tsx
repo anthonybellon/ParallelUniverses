@@ -61,9 +61,8 @@ const HomePage: React.FC = () => {
         body: JSON.stringify({ text: question }),
       });
 
-      if (!moderationRes.ok) {
-        throw new Error('Error during moderation check.');
-      }
+      if (!moderationRes.ok) throw new Error('Error during moderation check.');
+
       const { isFlagged } = await moderationRes.json();
       if (isFlagged) {
         alert('Content is flagged. Please try rephrasing your message.');
@@ -78,9 +77,7 @@ const HomePage: React.FC = () => {
         body: JSON.stringify({ content: question }),
       });
 
-      if (!intentRes.ok) {
-        throw new Error('Error during intent detection.');
-      }
+      if (!intentRes.ok) throw new Error('Error during intent detection.');
 
       const { intent } = await intentRes.json();
       if (intent !== 'createAlternateTimelineEvent') {
@@ -97,8 +94,7 @@ const HomePage: React.FC = () => {
       });
 
       const data = await response.json();
-
-      if (response.ok) {
+      if (response.ok && data.success) {
         const isSplinter = event.eventType === 'Splinter';
         const newEvent: EventNode = {
           id: String(Date.now()),
@@ -127,6 +123,8 @@ const HomePage: React.FC = () => {
         }
         setAllEvents(updatedEvents);
         await fetchEvents();
+      } else {
+        console.error('Error: Event was not properly stored.');
       }
     } catch (error) {
       console.error('Error generating alternate history:', error);

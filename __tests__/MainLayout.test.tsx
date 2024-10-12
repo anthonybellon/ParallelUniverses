@@ -3,6 +3,36 @@ import '@testing-library/jest-dom';
 import MainLayout from '@components/templates/MainLayout';
 import { EventNode } from 'src/data/events';
 
+jest.mock('firebase/app', () => ({
+  initializeApp: jest.fn(),
+}));
+
+jest.mock('firebase/auth', () => ({
+  getAuth: jest.fn(() => ({
+    currentUser: null,
+    signInWithEmailAndPassword: jest.fn(),
+    onAuthStateChanged: jest.fn((_, callback) => {
+      callback(null); // Mock no user
+      return jest.fn(); // Mock unsubscribe function
+    }),
+  })),
+  onAuthStateChanged: jest.fn(),
+}));
+
+jest.mock('firebase/firestore', () => ({
+  getFirestore: jest.fn(),
+}));
+
+jest.mock('firebase/storage', () => ({
+  getStorage: jest.fn(),
+}));
+
+jest.mock('firebase/analytics', () => ({
+  getAnalytics: jest.fn(),
+  isSupported: jest.fn().mockResolvedValue(false),
+}));
+
+// Mock next-intl
 jest.mock('next-intl', () => ({
   useTranslations: () => (key: string) => {
     const translations: { [key: string]: string } = {
@@ -12,7 +42,7 @@ jest.mock('next-intl', () => ({
   },
 }));
 
-// Mock the ReactECharts component to prevent canvas-related errors
+// Mock ReactECharts to avoid canvas-related issues
 jest.mock('echarts-for-react', () => () => (
   <div data-testid="echarts-mock">ECharts Mock</div>
 ));

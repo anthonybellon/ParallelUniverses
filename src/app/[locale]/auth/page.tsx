@@ -9,13 +9,13 @@ const AuthPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [isLoading, setIsLoading] = useState(false); // State for loading indicator
-  const [verificationRequired, setVerificationRequired] = useState(false); // State for verification required
-  const [emailToVerify, setEmailToVerify] = useState<string | null>(null); // State to store email for verification
+  const [isLoading, setIsLoading] = useState(false);
+  const [verificationRequired, setVerificationRequired] = useState(false);
+  const [emailToVerify, setEmailToVerify] = useState<string | null>(null);
 
   const handleLoginSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    setIsLoading(true); // Start loading
+    setIsLoading(true);
     try {
       const user = await signIn(
         email,
@@ -23,19 +23,20 @@ const AuthPage = () => {
         setVerificationRequired,
         setEmailToVerify,
       );
-      if (!user) return; // Stop if the verification is required
+      if (!user) return;
 
-      router.push('/'); // Redirect to home page after successful login
+      router.push('/');
     } catch {
       setError('Wrong email or password');
     } finally {
-      setIsLoading(false); // Stop loading
+      setIsLoading(false);
     }
   };
 
   const handleRegisterSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     console.log('still in beta');
+    // TODO: Implement sign up with protections
     // event.preventDefault();
     // try {
     //   const user = await signUp(email, password, setIsLoading);
@@ -55,9 +56,9 @@ const AuthPage = () => {
         password={password}
         setPassword={setPassword}
         error={error}
-        isLoading={isLoading} // Pass loading state to the component
-        verificationRequired={verificationRequired} // Pass verification state to the component
-        emailToVerify={emailToVerify} // Pass email for verification
+        isLoading={isLoading}
+        verificationRequired={verificationRequired}
+        emailToVerify={emailToVerify}
       />
     </div>
   );

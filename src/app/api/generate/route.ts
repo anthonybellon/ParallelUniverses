@@ -69,8 +69,6 @@ export async function POST(req: NextRequest) {
       }
 
       writeTimelinesFile(timelines);
-
-      return NextResponse.json({ success: true, newEvent });
     }
 
     return NextResponse.json({ success: true });
