@@ -1,7 +1,8 @@
 import React from 'react';
-import Input from '../atoms/Input';
+import { Input } from '@components/ui/input';
 
 interface FormFieldProps {
+  id: string;
   label: string;
   type?: string;
   value: string;
@@ -11,6 +12,7 @@ interface FormFieldProps {
 }
 
 const FormField: React.FC<FormFieldProps> = ({
+  id,
   label,
   type = 'text',
   value,
@@ -22,6 +24,7 @@ const FormField: React.FC<FormFieldProps> = ({
     <label>
       {label}
       <Input
+        id={id}
         type={type}
         value={value}
         onChange={onChange}

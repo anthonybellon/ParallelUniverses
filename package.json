@@ -32,7 +32,7 @@
     "echarts": "^5.5.1",
     "echarts-for-react": "^3.0.2",
     "eslint-config-prettier": "^9.1.0",
-    "firebase": "^10.13.1",
+    "firebase": "^10.14.1",
     "langchain": "^0.3.2",
     "lucide-react": "^0.441.0",
     "next": "^14.2.12",
