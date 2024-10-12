@@ -3,7 +3,6 @@ import { ChatPromptTemplate } from '@langchain/core/prompts';
 import { JsonOutputFunctionsParser } from 'langchain/output_parsers';
 import { createOpenAIFnRunnable } from 'langchain/chains/openai_functions';
 import { openAIFunction, INTENT_TEMPLATE } from './promptTemplates';
-import { z } from 'zod';
 
 export const determineIntent = async (content: string) => {
   try {
