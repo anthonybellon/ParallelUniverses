@@ -79,8 +79,8 @@ const CollapsibleTreeChart: React.FC<CollapsibleTreeChartProps> = ({
           ?.map((embellishment: string) => `<li>${embellishment}</li>`)
           .join('');
         const formattedDescription =
-          description?.length > 150
-            ? description.slice(0, 150) + '...'
+          description?.length > 550
+            ? description.slice(0, 550) + '...'
             : description || '';
 
         return `
@@ -134,7 +134,7 @@ const CollapsibleTreeChart: React.FC<CollapsibleTreeChartProps> = ({
   };
 
   const handleReset = () => {
-    setResetKey(Date.now()); // Update resetKey to re-render chart
+    setResetKey(Date.now());
   };
 
   return (
@@ -143,7 +143,7 @@ const CollapsibleTreeChart: React.FC<CollapsibleTreeChartProps> = ({
         <Button onClick={handleReset}>Reframe View</Button>
       </div>
       <ReactECharts
-        key={`${resetKey}-${JSON.stringify(data)}`} // Unique key to trigger re-render
+        key={`${resetKey}-${JSON.stringify(data)}`}
         option={option}
         style={{ height: chartHeight, width: '100vw' }}
         echarts={echarts}

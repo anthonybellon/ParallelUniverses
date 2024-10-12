@@ -53,7 +53,6 @@ const HomePage: React.FC = () => {
     newTimelineName?: string,
   ) => {
     try {
-      // Moderation check
       const moderationRes = await fetch('/api/moderation', {
         method: 'POST',
         headers: {
@@ -65,14 +64,32 @@ const HomePage: React.FC = () => {
       if (!moderationRes.ok) {
         throw new Error('Error during moderation check.');
       }
-
       const { isFlagged } = await moderationRes.json();
       if (isFlagged) {
         alert('Content is flagged. Please try rephrasing your message.');
-        return; // Stop the process here if content is flagged
+        return;
       }
 
-      // Proceed with generating the alternate history if moderation is clear
+      const intentRes = await fetch('/api/intent', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ content: question }),
+      });
+
+      if (!intentRes.ok) {
+        throw new Error('Error during intent detection.');
+      }
+
+      const { intent } = await intentRes.json();
+      if (intent !== 'createAlternateTimelineEvent') {
+        alert(
+          'The content does not align with creating an alternate timeline event.',
+        );
+        return;
+      }
+
       const response = await fetch('/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -95,7 +112,6 @@ const HomePage: React.FC = () => {
           embellishments: [],
         };
 
-        // Handle new events and timelines
         const updatedEvents = { ...allEvents };
         if (isSplinter && newTimelineName) {
           updatedEvents[newTimelineName] = [newEvent];
