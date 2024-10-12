@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import AuthCard from '@components/templates/AuthCard';
-import { signIn, signUp } from '../../../utils/userAuth';
+import { signIn } from '../../../utils/userAuth';
 const AuthPage = () => {
   const router = useRouter();
   const [email, setEmail] = useState('');
@@ -26,7 +26,7 @@ const AuthPage = () => {
       if (!user) return; // Stop if the verification is required
 
       router.push('/'); // Redirect to home page after successful login
-    } catch (error: any) {
+    } catch {
       setError('Wrong email or password');
     } finally {
       setIsLoading(false); // Stop loading
