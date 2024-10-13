@@ -3,11 +3,51 @@
 import React, { useState, useEffect } from 'react';
 import MainLayout from '@components/templates/MainLayout';
 import { EventNode } from 'src/data/events';
+import primeTimelineJson from 'src/data/timelines.json'; // Prime timeline import
 
 type EventData = Record<string, EventNode[]>;
 
+// Define acceptable event types
+type EventType = 'Continuation' | 'Splinter' | 'Embellish';
+
+// Extend EventNode with specific event types
+interface ValidEventNode extends EventNode {
+  eventType: EventType;
+}
+
+// Function to parse and validate the event type
+const parseEventType = (type: string): EventType => {
+  if (type === 'Continuation' || type === 'Splinter' || type === 'Embellish') {
+    return type;
+  }
+  throw new Error(`Invalid eventType: ${type}`);
+};
+
+// Function to transform imported data into typed data
+const parsePrimeTimelineData = (data: EventData): EventData => {
+  const parsedData: EventData = {};
+  for (const [timelineID, events] of Object.entries(data)) {
+    parsedData[timelineID] = events.map((event) => ({
+      ...event,
+      eventType: parseEventType(event.eventType),
+    })) as ValidEventNode[];
+  }
+  return parsedData;
+};
+
+// Function to get unique timeline IDs
 const getUniqueTimelineIDs = (events: EventData): string[] => {
   return Object.keys(events);
+};
+
+// Function to insert event in chronological order
+const insertEventInOrder = (
+  events: EventNode[],
+  newEvent: EventNode,
+): EventNode[] => {
+  return [...events, newEvent].sort(
+    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
+  );
 };
 
 const HomePage: React.FC = () => {
@@ -17,16 +57,26 @@ const HomePage: React.FC = () => {
   const [allEvents, setAllEvents] = useState<EventData>({});
   const [selectedEvent, setSelectedEvent] = useState<EventNode | null>(null);
 
-  const fetchEvents = async () => {
-    try {
-      const response = await fetch('/api/events');
-      const events: EventData = await response.json();
+  const fetchEvents = () => {
+    // Parse and validate prime timeline data
+    const primeTimelineData = parsePrimeTimelineData(
+      primeTimelineJson as EventData,
+    );
+    const storedEvents = localStorage.getItem('events');
+    const userEvents: EventData = storedEvents ? JSON.parse(storedEvents) : {};
 
-      setAllEvents(events);
-      setTimelines(getUniqueTimelineIDs(events));
-    } catch (error) {
-      console.error('Error fetching events:', error);
-    }
+    // Merge user events with prime timeline data
+    const combinedEvents: EventData = { ...primeTimelineData, ...userEvents };
+
+    // Ensure events in each timeline are sorted
+    Object.keys(combinedEvents).forEach((timelineID) => {
+      combinedEvents[timelineID] = combinedEvents[timelineID].sort(
+        (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
+      );
+    });
+
+    setAllEvents(combinedEvents);
+    setTimelines(getUniqueTimelineIDs(combinedEvents));
   };
 
   useEffect(() => {
@@ -105,6 +155,7 @@ const HomePage: React.FC = () => {
           date: data.date,
           description: data.description,
           eventType: event.eventType,
+          ...(event.eventType === 'Splinter' && { parentID: data.parentID }),
           embellishments: [],
         };
 
@@ -115,14 +166,16 @@ const HomePage: React.FC = () => {
         } else {
           const timelineId = event.timelineID;
           if (timelineId) {
-            updatedEvents[timelineId] = [
-              ...(updatedEvents[timelineId] || []),
+            updatedEvents[timelineId] = insertEventInOrder(
+              updatedEvents[timelineId] || [],
               newEvent,
-            ];
+            );
           }
         }
+
         setAllEvents(updatedEvents);
-        await fetchEvents();
+        localStorage.setItem('events', JSON.stringify(updatedEvents));
+        fetchEvents();
       } else {
         console.error('Error: Event was not properly stored.');
       }
