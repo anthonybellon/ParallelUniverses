@@ -15,7 +15,7 @@ The Parallel Universe Simulator is an AI-powered application for exploring alter
 
 ## Project Structure
 
-Built with Next.js and TypeScript, the project follows atomic design principles. Timeline data is stored locally in JSON format, managed through helper functions to handle reading, writing, and chronological organization.
+Built with Next.js and TypeScript, the project follows atomic design principles. Timeline data is stored locally.
 
 ## How It Works
 
