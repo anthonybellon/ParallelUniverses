@@ -20,7 +20,7 @@ const SelectEvent: React.FC<SelectEventProps> = ({
   events,
   selectedEventId,
   onSelect,
-  selectedTimeline, // Destructure selectedTimeline
+  selectedTimeline,
 }) => (
   <div className="flex flex-col space-y-2 px-6">
     <Label htmlFor="event-select">Select an Event:</Label>

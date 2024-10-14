@@ -6,15 +6,42 @@
       "name": "First Powered Flight",
       "date": "1903-01-01",
       "description": "The Wright brothers achieve the first powered flight.",
-      "eventType": "Continuation",
-      "embellishments": [
-        "The flight took place at Kitty Hawk, North Carolina.",
-        "The plane was called the Flyer and had a wingspan of 12.3 meters."
-      ],
-      "parentID": null
+      "eventType": "Continuation"
     },
     {
       "id": "2",
+      "timelineID": "1",
+      "name": "Ford Model T Introduced",
+      "date": "1908-10-01",
+      "description": "The Ford Model T is introduced, revolutionizing the automobile industry.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "3",
+      "timelineID": "1",
+      "name": "First World Series",
+      "date": "1903-10-01",
+      "description": "The first World Series in baseball takes place between the Boston Americans and the Pittsburgh Pirates.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "4",
+      "timelineID": "1",
+      "name": "Panama Canal Construction Begins",
+      "date": "1904-01-01",
+      "description": "Construction of the Panama Canal officially begins.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "5",
+      "timelineID": "1",
+      "name": "Nobel Prize Established",
+      "date": "1901-12-10",
+      "description": "The first Nobel Prizes are awarded, established by Alfred Nobel's will.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "6",
       "timelineID": "1",
       "name": "Start of World War I",
       "date": "1914-07-28",
@@ -22,7 +49,207 @@
       "eventType": "Continuation"
     },
     {
-      "id": "3",
+      "id": "7",
+      "timelineID": "1",
+      "name": "Sinking of the Titanic",
+      "date": "1912-04-15",
+      "description": "The RMS Titanic sinks on its maiden voyage, resulting in over 1,500 deaths.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "8",
+      "timelineID": "1",
+      "name": "Women’s Suffrage Movement Gains Ground",
+      "date": "1918-11-06",
+      "description": "The Representation of the People Act is passed in the UK, granting voting rights to women over 30.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "9",
+      "timelineID": "1",
+      "name": "The League of Nations Established",
+      "date": "1919-01-10",
+      "description": "The League of Nations is established to promote peace after WWI.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "10",
+      "timelineID": "1",
+      "name": "Spanish Flu Pandemic",
+      "date": "1918-03-01",
+      "description": "The Spanish flu pandemic begins, affecting millions worldwide.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "11",
+      "timelineID": "1",
+      "name": "Prohibition in the United States",
+      "date": "1920-01-17",
+      "description": "The 18th Amendment begins Prohibition, banning the sale of alcohol.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "12",
+      "timelineID": "1",
+      "name": "The Great Gatsby Published",
+      "date": "1925-04-10",
+      "description": "F. Scott Fitzgerald’s 'The Great Gatsby' is published, defining the Jazz Age.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "13",
+      "timelineID": "1",
+      "name": "First Transatlantic Flight",
+      "date": "1927-05-20",
+      "description": "Charles Lindbergh makes the first solo nonstop transatlantic flight.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "14",
+      "timelineID": "1",
+      "name": "Stock Market Crash",
+      "date": "1929-10-29",
+      "description": "The Wall Street Crash marks the beginning of the Great Depression.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "15",
+      "timelineID": "1",
+      "name": "Women Gain the Right to Vote in the U.S.",
+      "date": "1920-08-18",
+      "description": "The 19th Amendment is ratified, granting women the right to vote.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "16",
+      "timelineID": "1",
+      "name": "The Great Depression Begins",
+      "date": "1929-10-29",
+      "description": "The stock market crash leads to widespread economic hardship.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "17",
+      "timelineID": "1",
+      "name": "Hitler Becomes Chancellor of Germany",
+      "date": "1933-01-30",
+      "description": "Adolf Hitler is appointed Chancellor, marking the rise of the Nazi regime.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "18",
+      "timelineID": "1",
+      "name": "Dust Bowl Begins",
+      "date": "1930-01-01",
+      "description": "Severe drought and poor farming practices lead to massive dust storms in the U.S. Midwest.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "19",
+      "timelineID": "1",
+      "name": "World War II Begins",
+      "date": "1939-09-01",
+      "description": "Germany invades Poland, triggering the start of WWII.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "20",
+      "timelineID": "1",
+      "name": "Social Security Act Passed",
+      "date": "1935-08-14",
+      "description": "The Social Security Act is signed into law in the U.S.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "21",
+      "timelineID": "1",
+      "name": "Pearl Harbor Attack",
+      "date": "1941-12-07",
+      "description": "Japan attacks Pearl Harbor, leading to the U.S. entering WWII.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "22",
+      "timelineID": "1",
+      "name": "D-Day Invasion",
+      "date": "1944-06-06",
+      "description": "Allied forces launch a massive invasion of German-occupied France.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "23",
+      "timelineID": "1",
+      "name": "United Nations Established",
+      "date": "1945-10-24",
+      "description": "The UN is founded to promote international cooperation and peace.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "24",
+      "timelineID": "1",
+      "name": "Atomic Bombs Dropped on Hiroshima and Nagasaki",
+      "date": "1945-08-06 and 1945-08-09",
+      "description": "The U.S. drops atomic bombs, leading to Japan's surrender.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "25",
+      "timelineID": "1",
+      "name": "The Marshall Plan Announced",
+      "date": "1947-06-05",
+      "description": "The U.S. launches the Marshall Plan to aid European recovery post-WWII.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "26",
+      "timelineID": "1",
+      "name": "Korean War Begins",
+      "date": "1950-06-25",
+      "description": "The Korean War begins as North Korea invades South Korea.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "27",
+      "timelineID": "1",
+      "name": "Brown v. Board of Education",
+      "date": "1954-05-17",
+      "description": "The Supreme Court rules that racial segregation in public schools is unconstitutional.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "28",
+      "timelineID": "1",
+      "name": "Launch of Sputnik",
+      "date": "1957-10-04",
+      "description": "The Soviet Union launches Sputnik, the first artificial satellite, marking the start of the space race.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "29",
+      "timelineID": "1",
+      "name": "Civil Rights Movement Gains Momentum",
+      "date": "1955-12-01",
+      "description": "Rosa Parks is arrested for refusing to give up her bus seat, sparking the Montgomery Bus Boycott.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "30",
+      "timelineID": "1",
+      "name": "Formation of NATO",
+      "date": "1950-04-04",
+      "description": "The North Atlantic Treaty Organization (NATO) is formed as a military alliance.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "31",
+      "timelineID": "1",
+      "name": "Civil Rights Act Passed",
+      "date": "1964-07-02",
+      "description": "The Civil Rights Act is signed into law, prohibiting discrimination based on race, color, religion, sex, or national origin.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "32",
       "timelineID": "1",
       "name": "Moon Landing",
       "date": "1969-07-20",
@@ -30,20 +257,187 @@
       "eventType": "Continuation"
     },
     {
-      "id": "1728761270889",
+      "id": "33",
       "timelineID": "1",
-      "name": "Chinese Moon Landing",
-      "date": "1969-07-20",
-      "description": "In a stunning display of technological prowess, the People's Republic of China successfully lands its spacecraft, the Shenzhou 1, on the Moon, becoming the first nation to achieve this monumental feat. The landing occurs just hours before the Apollo 11 mission, leading to a global shift in the space race dynamics and redefining international relations and technological competition.",
-      "eventType": "Continuation",
-      "embellishments": []
+      "name": "Assassination of John F. Kennedy",
+      "date": "1963-11-22",
+      "description": "President Kennedy is assassinated in Dallas, Texas.",
+      "eventType": "Continuation"
     },
     {
-      "id": "4",
+      "id": "34",
+      "timelineID": "1",
+      "name": "Vietnam War Escalates",
+      "date": "1965-03-08",
+      "description": "U.S. combat troops are sent to Vietnam, marking a significant escalation of the conflict.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "35",
+      "timelineID": "1",
+      "name": "Woodstock Music Festival",
+      "date": "1969-08-15",
+      "description": "The iconic Woodstock festival takes place, symbolizing the counterculture of the 1960s.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "36",
+      "timelineID": "1",
+      "name": "Watergate Scandal",
+      "date": "1972-06-17",
+      "description": "The Watergate scandal begins with a break-in at the Democratic National Committee headquarters.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "37",
+      "timelineID": "1",
+      "name": "End of Vietnam War",
+      "date": "1975-04-30",
+      "description": "The Vietnam War ends with the fall of Saigon.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "38",
+      "timelineID": "1",
+      "name": "U.S. Recognizes China",
+      "date": "1979-01-01",
+      "description": "The U.S. officially recognizes the People's Republic of China.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "39",
+      "timelineID": "1",
+      "name": "First Earth Day Celebrated",
+      "date": "1970-04-22",
+      "description": "The first Earth Day is celebrated, marking the beginning of the modern environmental movement.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "40",
+      "timelineID": "1",
+      "name": "Formation of OPEC",
+      "date": "1973-10-17",
+      "description": "OPEC imposes an oil embargo, leading to global energy crises.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "41",
+      "timelineID": "1",
+      "name": "Reagan Elected President",
+      "date": "1980-11-04",
+      "description": "Ronald Reagan is elected the 40th President of the United States.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "42",
+      "timelineID": "1",
+      "name": "Challenger Disaster",
+      "date": "1986-01-28",
+      "description": "The Space Shuttle Challenger explodes shortly after launch, killing all seven crew members.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "43",
       "timelineID": "1",
       "name": "Fall of the Berlin Wall",
       "date": "1989-11-09",
-      "description": "Marks the symbolic end of the Cold War.",
+      "description": "The Berlin Wall falls, marking the symbolic end of the Cold War.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "44",
+      "timelineID": "1",
+      "name": "AIDS Epidemic Recognized",
+      "date": "1981-06-05",
+      "description": "The first cases of what will be recognized as AIDS are reported.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "45",
+      "timelineID": "1",
+      "name": "Chernobyl Nuclear Disaster",
+      "date": "1986-04-26",
+      "description": "A reactor at the Chernobyl nuclear power plant explodes, leading to one of the worst nuclear disasters in history.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "46",
+      "timelineID": "1",
+      "name": "Introduction of the World Wide Web",
+      "date": "1991-08-06",
+      "description": "The World Wide Web is launched, revolutionizing communication and information sharing.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "47",
+      "timelineID": "1",
+      "name": "End of the Cold War",
+      "date": "1991-12-26",
+      "description": "The Soviet Union officially dissolves, marking the end of the Cold War.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "48",
+      "timelineID": "1",
+      "name": "Dissolution of Yugoslavia",
+      "date": "1992-04-27",
+      "description": "The breakup of Yugoslavia begins, leading to a series of conflicts in the region.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "49",
+      "timelineID": "1",
+      "name": "Rwandan Genocide",
+      "date": "1994-04-07",
+      "description": "A genocide in Rwanda leads to the deaths of an estimated 800,000 people.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "50",
+      "timelineID": "1",
+      "name": "Oklahoma City Bombing",
+      "date": "1995-04-19",
+      "description": "A domestic terrorist bombing of the Alfred P. Murrah Federal Building results in 168 deaths.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "51",
+      "timelineID": "1",
+      "name": "September 11 Attacks",
+      "date": "2001-09-11",
+      "description": "Terrorist attacks in the U.S. result in significant loss of life and changes in global security policies.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "52",
+      "timelineID": "1",
+      "name": "Launch of the iPod",
+      "date": "2001-10-23",
+      "description": "Apple launches the iPod, revolutionizing how music is consumed.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "53",
+      "timelineID": "1",
+      "name": "U.S. Invades Afghanistan",
+      "date": "2001-10-07",
+      "description": "The U.S. launches military operations in Afghanistan following the September 11 attacks.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "54",
+      "timelineID": "1",
+      "name": "Completion of the Human Genome Project",
+      "date": "2003-04-14",
+      "description": "The Human Genome Project is completed, mapping the entire human genome.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "55",
+      "timelineID": "1",
+      "name": "Financial Crisis",
+      "date": "2007-10-01",
+      "description": "The global financial crisis begins, leading to widespread economic downturn.",
       "eventType": "Continuation"
     }
   ],
@@ -56,19 +450,7 @@
       "description": "In an unexpected turn of events, the Berlin Wall does not fall. Instead, a series of political negotiations and military posturing leads to a strengthened division of East and West Berlin. The Soviet Union reasserts its control over Eastern Europe, resulting in a prolonged Cold War era, where tensions escalate, but actual conflict is avoided. This event marks not only the persistence of the Iron Curtain but also a new phase of ideological conflicts and proxy wars across the globe.",
       "eventType": "Splinter",
       "embellishments": [],
-      "parentID": "4"
-    }
-  ],
-  "3": [
-    {
-      "id": "1728774412268",
-      "timelineID": "3",
-      "name": "Rise of the Berlin Wall: A Prelude to Peace",
-      "date": "1989-11-09",
-      "description": "In this alternate reality, instead of leading to the fall of the Berlin Wall, the events of November 9, 1989, resulted in a renewed commitment to dialogue and cooperation between East and West. Rather than crumbling, the Wall became a symbol of shared challenges, prompting leaders to negotiate a comprehensive peace plan that would span the next three decades. This initiative fostered unprecedented cultural exchange, economic partnerships, and a gradual dismantling of ideological divisions, resulting in a more unified Europe and a peaceful world order.",
-      "eventType": "Splinter",
-      "embellishments": [],
-      "parentID": "4"
+      "parentID": "43"
     }
   ]
 }

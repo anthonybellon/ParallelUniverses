@@ -84,7 +84,9 @@ export default function UserInputForm({
                 <SelectValue placeholder="Select event type" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="Continuation">Continuation</SelectItem>
+                {event.timelineID !== '1' && (
+                  <SelectItem value="Continuation">Continuation</SelectItem>
+                )}
                 <SelectItem value="Splinter">Splinter</SelectItem>
               </SelectContent>
             </Select>
