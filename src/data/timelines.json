@@ -452,5 +452,220 @@
       "embellishments": [],
       "parentID": "43"
     }
+  ],
+  "The Titanic Arrives": [
+    {
+      "id": "titanic-1",
+      "timelineID": "The Titanic Arrives",
+      "name": "The Titanic Reaches New York",
+      "date": "1912-04-15",
+      "description": "Lookouts spot the iceberg in time and the Titanic slows through the ice field. It docks in New York two days later to a crowd that never learns how close it came.",
+      "eventType": "Splinter",
+      "parentID": "7"
+    },
+    {
+      "id": "titanic-2",
+      "timelineID": "The Titanic Arrives",
+      "name": "The Age of the Superliner",
+      "date": "1913-06-01",
+      "description": "With the Titanic's success, White Star and Cunard race to build even larger liners. Ocean travel becomes the fashionable way to cross the Atlantic for a generation.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "titanic-3",
+      "timelineID": "The Titanic Arrives",
+      "name": "Lifeboat Rules Never Written",
+      "date": "1914-01-20",
+      "description": "With no disaster to prompt it, the first international safety conference is shelved. Ships keep sailing with lifeboats for barely half their passengers.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "titanic-4",
+      "timelineID": "The Titanic Arrives",
+      "name": "The Britannic Lost",
+      "date": "1916-11-21",
+      "description": "Requisitioned as a hospital ship, the Titanic's sister strikes a mine in the Aegean. Over a thousand die, and the safety rules the world skipped are finally passed in its name.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "titanic-5",
+      "timelineID": "The Titanic Arrives",
+      "name": "Airships Over the Atlantic",
+      "date": "1927-05-20",
+      "description": "Superliner companies invest in passenger airships rather than aeroplanes. Lindbergh's solo flight is a curiosity; the future of crossing seems to float.",
+      "eventType": "Continuation"
+    }
+  ],
+  "No Great Crash": [
+    {
+      "id": "crash-1",
+      "timelineID": "No Great Crash",
+      "name": "The Fed Steps In",
+      "date": "1929-10-29",
+      "description": "As prices fall on Black Tuesday, the Federal Reserve floods the banks with credit and suspends margin calls. The market drops sharply but recovers within weeks.",
+      "eventType": "Splinter",
+      "parentID": "14"
+    },
+    {
+      "id": "crash-2",
+      "timelineID": "No Great Crash",
+      "name": "The Long Twenties",
+      "date": "1931-05-01",
+      "description": "Without a depression, the boom rolls into the 1930s. Radios, cars and electric appliances reach most American homes years earlier than they otherwise would.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "crash-3",
+      "timelineID": "No Great Crash",
+      "name": "Hoover Re-elected",
+      "date": "1932-11-08",
+      "description": "Running on prosperity, Herbert Hoover wins a second term. Franklin Roosevelt stays Governor of New York, and the New Deal is never proposed.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "crash-4",
+      "timelineID": "No Great Crash",
+      "name": "Weimar Holds",
+      "date": "1933-03-05",
+      "description": "Exports to a booming America keep German unemployment low. The Nazi vote collapses, and Hitler fails to become chancellor.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "crash-5",
+      "timelineID": "No Great Crash",
+      "name": "The Slow Bust",
+      "date": "1937-07-01",
+      "description": "Years of unchecked speculation end in a long, grinding recession. It is milder than a depression but lasts most of a decade, and no safety net exists to soften it.",
+      "eventType": "Continuation"
+    }
+  ],
+  "Kennedy Survives": [
+    {
+      "id": "kennedy-1",
+      "timelineID": "Kennedy Survives",
+      "name": "The Shot Misses",
+      "date": "1963-11-22",
+      "description": "A last-second turn of the motorcade throws off the gunman's aim in Dallas. Kennedy is wounded in the arm and returns to Washington the same night.",
+      "eventType": "Splinter",
+      "parentID": "33"
+    },
+    {
+      "id": "kennedy-2",
+      "timelineID": "Kennedy Survives",
+      "name": "A Second Term",
+      "date": "1964-11-03",
+      "description": "Riding a wave of sympathy, Kennedy defeats Barry Goldwater in a landslide. Lyndon Johnson remains Vice President.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "kennedy-3",
+      "timelineID": "Kennedy Survives",
+      "name": "Advisers Come Home",
+      "date": "1965-06-01",
+      "description": "Kennedy follows through on plans to withdraw military advisers from Vietnam. The war remains a regional conflict and never draws in American ground troops.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "kennedy-4",
+      "timelineID": "Kennedy Survives",
+      "name": "Civil Rights in Pieces",
+      "date": "1966-07-02",
+      "description": "Without Johnson working Congress, the civil rights bill is split up and passed in parts over three years. Protest grows while the bills stall.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "kennedy-5",
+      "timelineID": "Kennedy Survives",
+      "name": "Kennedy Watches the Landing",
+      "date": "1969-07-20",
+      "description": "The President who promised the Moon watches Apollo 11 touch down in his last year in office. He dedicates the mission to the astronauts who will follow.",
+      "eventType": "Continuation"
+    }
+  ],
+  "The Moon Base": [
+    {
+      "id": "moon-1",
+      "timelineID": "The Moon Base",
+      "name": "A Promise to Stay",
+      "date": "1969-07-20",
+      "description": "Speaking to Armstrong on the Moon, Nixon announces that America will not just visit but live there. Congress keeps NASA's Apollo-era budget.",
+      "eventType": "Splinter",
+      "parentID": "32"
+    },
+    {
+      "id": "moon-2",
+      "timelineID": "The Moon Base",
+      "name": "Apollo 20 Flies",
+      "date": "1973-12-01",
+      "description": "The cancelled Apollo missions all go ahead. Crews spend weeks on the surface, mapping sites for a permanent base.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "moon-3",
+      "timelineID": "The Moon Base",
+      "name": "Armstrong Station",
+      "date": "1979-07-20",
+      "description": "Ten years after the first landing, a crew of four moves into a habitat near the Moon's south pole. It is never left empty again.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "moon-4",
+      "timelineID": "The Moon Base",
+      "name": "Challenger Grounded",
+      "date": "1986-01-28",
+      "description": "A cold launch morning is called off after engineers refuse to sign the waiver. The Shuttle flies the next week without incident.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "moon-5",
+      "timelineID": "The Moon Base",
+      "name": "First Child Born Off Earth",
+      "date": "1999-06-01",
+      "description": "A baby girl is born at Armstrong Station. Her arrival starts a fierce debate about who should be allowed to grow up away from Earth.",
+      "eventType": "Continuation"
+    }
+  ],
+  "The Closed Web": [
+    {
+      "id": "web-1",
+      "timelineID": "The Closed Web",
+      "name": "CERN Keeps the Web",
+      "date": "1991-08-06",
+      "description": "CERN decides to license the World Wide Web rather than give it away. Only universities and large companies can afford to run servers.",
+      "eventType": "Splinter",
+      "parentID": "46"
+    },
+    {
+      "id": "web-2",
+      "timelineID": "The Closed Web",
+      "name": "Online Services Win",
+      "date": "1994-10-13",
+      "description": "With no open web to compete with, AOL, CompuServe and Prodigy grow into walled gardens. Each has its own shops, news and email that can't reach the others.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "web-3",
+      "timelineID": "The Closed Web",
+      "name": "No Google",
+      "date": "1998-09-04",
+      "description": "Two Stanford students build a search engine but have no open web to crawl. They sell their ranking method to one of the big online services.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "web-4",
+      "timelineID": "The Closed Web",
+      "name": "The Licensed iPod",
+      "date": "2001-10-23",
+      "description": "Apple sells music through every online service's store, paying each one a fee. Songs bought on one service won't play on another.",
+      "eventType": "Continuation"
+    },
+    {
+      "id": "web-5",
+      "timelineID": "The Closed Web",
+      "name": "The Phone That Shows One Service",
+      "date": "2007-06-29",
+      "description": "Apple's new phone connects to a single online service chosen by your carrier. Calls to open the networks to each other grow louder.",
+      "eventType": "Continuation"
+    }
   ]
 }

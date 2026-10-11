@@ -1,79 +1,67 @@
 import React from 'react';
-import CollapsibleTreeChart from '@components/organisms/CollapsibleTreeChart';
-import EventSelectionForm from '@components/organisms/EventSelectionForm';
-import { EventNode } from 'src/data/events';
 import { useTranslations } from 'next-intl';
-// import { useRouter } from 'next/navigation';
-// import { Button } from '@components/ui/button';
-// import { useUser } from '../../context/UserContext';
-// import UserDropdown from '@components/molecules/UserDropdown';
 
 interface MainLayoutProps {
-  timelineEvents: EventNode[][];
-  timelines: string[];
-  selectedTimeline: string | null;
-  setSelectedTimeline: (timeline: string | null) => void;
-  selectedEvent: EventNode | null;
-  setSelectedEvent: (event: EventNode | null) => void;
-  addEvent: (
-    event: EventNode,
-    question: string,
-    newTimelineName?: string,
-  ) => Promise<void>;
+  /** Controls at the right of the header. */
+  actions?: React.ReactNode;
+  /** One line above the chart. */
+  hint?: React.ReactNode;
+  /** Controls at the right of the line above the chart. */
+  chartControls?: React.ReactNode;
+  chart: React.ReactNode;
+  sidebar: React.ReactNode;
 }
 
+/**
+ * The chart beside the sidebar on wide screens; on phones the sidebar
+ * stacks under the chart.
+ */
 const MainLayout: React.FC<MainLayoutProps> = ({
-  timelineEvents,
-  timelines,
-  selectedTimeline,
-  setSelectedTimeline,
-  selectedEvent,
-  setSelectedEvent,
-  addEvent,
+  actions,
+  hint,
+  chartControls,
+  chart,
+  sidebar,
 }) => {
   const t = useTranslations('MainLayout');
-  // const router = useRouter();
-  // const { user, loading } = useUser();
-  // const handleAuthRedirect = () => {
-  //   router.push('/auth');
-  // };
   return (
-    <div className="flex min-h-screen min-w-full flex-col">
-      <header className="flex grid-flow-row justify-between bg-gray-200 p-5">
-        <h1 className="pt-1 text-lg font-semibold">{t('title')}</h1>
-        {/* {!loading && user ? (
-          <UserDropdown
-            photoURL={user.photoURL}
-            displayName={user.displayName || user.email}
-            email={user.email}
-            handleAuthRedirect={handleAuthRedirect}
+    <div className="flex min-h-screen flex-col">
+      <header className="flex min-h-16 flex-wrap items-center justify-between gap-3 border-b-2 border-double border-border bg-card/80 px-4 py-3">
+        <h1 className="glow font-display text-3xl uppercase leading-none tracking-wider text-primary">
+          <span aria-hidden="true">&gt; </span>
+          {t('title')}
+          <span
+            aria-hidden="true"
+            className="ml-1 inline-block h-[0.8em] w-[0.5em] translate-y-[0.05em] animate-[blink_1.1s_steps(1)_infinite] bg-primary motion-reduce:animate-none"
           />
-        ) : (
-          <Button variant="outline" onClick={handleAuthRedirect}>
-            Login / Register
-          </Button>
-        )} */}
+        </h1>
+        {actions}
       </header>
 
-      <main className="relative grid h-full w-full grid-cols-[3fr_1fr] gap-4">
-        <div className="h-[calc(100vh-100px)] w-full overflow-auto">
-          <CollapsibleTreeChart data={timelineEvents} />
-        </div>
-        <div className="h-[calc(100vh-100px)] w-full overflow-auto">
-          <EventSelectionForm
-            timelines={timelines}
-            selectedTimeline={selectedTimeline}
-            setSelectedTimeline={setSelectedTimeline}
-            events={timelineEvents.flat()}
-            selectedEvent={selectedEvent}
-            setSelectedEvent={setSelectedEvent}
-            addEvent={addEvent}
-          />
-        </div>
+      <main className="grid flex-1 grid-cols-1 lg:grid-cols-[minmax(0,1fr)_400px]">
+        <section
+          aria-label="Chart"
+          className="flex min-w-0 flex-col border-b lg:h-[calc(100vh-4rem)] lg:border-b-0 lg:border-r"
+        >
+          {(hint || chartControls) && (
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b px-4 py-2">
+              {hint && (
+                <p className="text-xs text-muted-foreground">
+                  <span aria-hidden="true">{'// '}</span>
+                  {hint}
+                </p>
+              )}
+              {chartControls}
+            </div>
+          )}
+          <div className="h-[55vh] min-h-[320px] lg:h-auto lg:flex-1">
+            {chart}
+          </div>
+        </section>
+        <aside className="p-4 lg:h-[calc(100vh-4rem)] lg:overflow-y-auto">
+          {sidebar}
+        </aside>
       </main>
-      <footer className="bg-gray-200 py-3 text-center text-sm">
-        <p>&copy; {new Date().getFullYear()}</p>
-      </footer>
     </div>
   );
 };

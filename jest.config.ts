@@ -9,20 +9,19 @@ const customConfig: Config = {
   coverageProvider: 'v8',
   testEnvironment: 'jest-environment-jsdom',
   setupFilesAfterEnv: ['./jest.setup.ts'],
-  preset: 'ts-jest',
-  // moduleNameMapper: {
-  //   '^@components/(.*)$': '<rootDir>/src/components/$1',
-  //   '^@pages/(.*)$': '<rootDir>/src/app/pages/$1',
-  //   '^@styles/(.*)$': '<rootDir>/src/app/styles/$1',
-  //   '^@utils/(.*)$': '<rootDir>/src/utils/$1',
-  //   '^@models/(.*)$': '<rootDir>/src/models/$1',
-  //   '^@store/(.*)$': '<rootDir>/src/store/$1',
-  // },
-  // testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
-  // transform: {
-  //   '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
-  // },
-  // transformIgnorePatterns: ['/node_modules/'],
+  // Mirrors the paths in tsconfig.json so jest.mock() resolves aliases too.
+  moduleNameMapper: {
+    '^@components/(.*)$': '<rootDir>/src/components/$1',
+    '^@utils/(.*)$': '<rootDir>/src/utils/$1',
+    '^@store/(.*)$': '<rootDir>/src/store/$1',
+    '^@hooks/(.*)$': '<rootDir>/src/hooks/$1',
+    '^src/(.*)$': '<rootDir>/src/$1',
+  },
+  testPathIgnorePatterns: [
+    '<rootDir>/.next/',
+    '<rootDir>/node_modules/',
+    '<rootDir>/e2e/',
+  ],
 };
 
 export default createJestConfig(customConfig);

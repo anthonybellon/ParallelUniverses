@@ -1,87 +1,39 @@
-import { ChatOpenAI } from '@langchain/openai';
-import { ChatPromptTemplate } from '@langchain/core/prompts';
-import { JsonOutputFunctionsParser } from 'langchain/output_parsers';
-import { createOpenAIFnRunnable } from 'langchain/chains/openai_functions';
+import { generateText, Output } from 'ai';
 import { z } from 'zod';
 
-import { HISTORY_TEMPLATE } from './promptTemplates';
+import { EventDraft } from 'src/data/events';
+import { chatModel } from './openaiClient';
+import { buildHistoryPrompt, HistoryPromptInput } from './promptTemplates';
+import { TEXT_LIMITS } from './sanitizeInput';
 
 const alternateHistorySchema = z.object({
-  date: z.string(),
-  title: z.string(),
-  description: z.string(),
+  date: z.string().describe('Date of the new event, written as YYYY-MM-DD'),
+  title: z.string().describe('A short title for the new event'),
+  description: z
+    .string()
+    .describe('A few sentences on what happens and why it matters'),
 });
 
-export interface AlternateHistory {
-  date: string;
-  title: string;
-  description: string;
-}
-
-const openAIFunction = {
-  name: 'generate_alternate_history',
-  description:
-    'Generate an alternate history based on a given historical event and hypothetical scenario.',
-  parameters: {
-    title: 'generate_alternate_history',
-    description:
-      'Generate an alternate history for a specified date, title, and description.',
-    type: 'object',
-    properties: {
-      date: { type: 'string', description: 'The date of the alternate event' },
-      title: {
-        type: 'string',
-        description: 'The title of the alternate event',
-      },
-      description: {
-        type: 'string',
-        description: 'A summary of the alternate history outcome',
-      },
-    },
-    required: ['date', 'title', 'description'],
-  },
-};
-
+/** Asks the AI for the next event. Throws if it fails or returns something unusable. */
 export const generateAlternateHistory = async (
-  date: string,
-  title: string,
-  description: string,
-  question: string,
-): Promise<AlternateHistory | string> => {
-  try {
-    alternateHistorySchema.parse({ date, title, description });
+  input: HistoryPromptInput,
+  apiKey: string,
+): Promise<EventDraft> => {
+  const { output } = await generateText({
+    model: chatModel(apiKey),
+    maxOutputTokens: 600,
+    output: Output.object({
+      name: 'alternate_history_event',
+      schema: alternateHistorySchema,
+    }),
+    prompt: buildHistoryPrompt(input),
+  });
 
-    const model = new ChatOpenAI({
-      apiKey: process.env.OPENAI_API_KEY!,
-      model: 'gpt-4o-mini',
-      maxTokens: 400,
-    });
-
-    const promptContent = HISTORY_TEMPLATE.replace('{date}', date)
-      .replace('{title}', title)
-      .replace('{description}', description)
-      .replace('{question}', question);
-
-    const prompt = ChatPromptTemplate.fromMessages([['human', promptContent]]);
-    const outputParser = new JsonOutputFunctionsParser();
-    const runnable = createOpenAIFnRunnable({
-      functions: [openAIFunction],
-      llm: model,
-      prompt,
-      enforceSingleFunctionUsage: true,
-      outputParser,
-    });
-
-    const response = await runnable.invoke({
-      date,
-      title,
-      description,
-      question,
-    });
-
-    return response as AlternateHistory;
-  } catch (error) {
-    console.error('Error:', error);
-    return JSON.stringify({ error: (error as Error).message });
-  }
+  const name = output.title.trim().slice(0, TEXT_LIMITS.name);
+  if (!name) throw new Error('The AI returned an event without a title.');
+  return {
+    name,
+    date: output.date.trim().slice(0, TEXT_LIMITS.date),
+    description: output.description.trim().slice(0, TEXT_LIMITS.description),
+  };
 };
