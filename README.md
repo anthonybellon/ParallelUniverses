@@ -60,6 +60,8 @@ Only what you make is saved, under the `parallel-universes` key in local storage
 
 ## Installation
 
+Requires Node.js 24 or later (see `.nvmrc`).
+
 1.	Clone the repository:
     ```
     git clone git@github.com:anthonybellon/ParallelUniverses.git
